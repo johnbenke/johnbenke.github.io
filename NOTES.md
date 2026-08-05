@@ -128,7 +128,10 @@ have no project on this page backing them, so they are not in the skills list.
 ASHRAE 55 / 90.1 stayed because the MEMS 3430 project uses them directly. The
 IEC standards are gone for the reason above.
 
-**Project order.** The site leads with mechanism design and analysis rather than
-the Cutlass, which is how the portfolio doc opens. For an engineering
-application the CAD and simulation work should be read first; the restoration
-projects are still prominent, just lower.
+**Project order.** Card order, set by John: Cutlass → motorcycles → GASP →
+COMSOL → HVAC → alarm clock → foosball → machine shop. The restoration work
+leads, which also puts the three strongest photographs in the first two tiles;
+the three projects with no photo fall to the end, so the typographic tiles sit
+together rather than interrupting the grid. Prev/next links on the project
+pages follow the same order — change one and change the other, or the walk
+through the projects stops matching the grid.
