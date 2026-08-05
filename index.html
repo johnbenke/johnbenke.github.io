@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!--
+  John Benke — portfolio. Single file, no build step.
+
+  DRAFT COPY: project blurbs below were written from the project list only.
+  Read every paragraph and rewrite it in your own words before you send the
+  URL to anyone. Anywhere a claim needs your specifics, there is a visible
+  red .todo box — fill it in, then delete the whole <div class="todo">…</div>.
+
+  Figures whose image file is missing render a dashed placeholder naming the
+  file they want. Either add the file to images/ or delete that <figure>.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>John Benke — Mechanical Engineer</title>
+<meta name="description" content="Mechanical engineering portfolio of John Benke: CAD and design work, machining, and hands-on mechanical restoration.">
+<style>
+  :root{
+    --bg:#fbfaf8; --panel:#ffffff; --ink:#16181d; --muted:#5d6470;
+    --line:#e3e0da; --accent:#9a4a26; --accent-soft:#f4ece7;
+    --maxw:920px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#131417; --panel:#191b1f; --ink:#e9e7e3; --muted:#9aa0aa;
+      --line:#2a2d33; --accent:#e08a5e; --accent-soft:#241c18;
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+  a{color:var(--accent)}
+  a:hover{text-decoration:none}
+
+  /* ---------- masthead ---------- */
+  header.masthead{padding:64px 0 40px; border-bottom:1px solid var(--line)}
+  h1{
+    font-size:clamp(34px,6vw,52px); line-height:1.05; margin:0 0 10px;
+    letter-spacing:-.02em; font-weight:640;
+  }
+  .tagline{font-size:clamp(17px,2.4vw,20px); color:var(--muted); margin:0 0 22px; max-width:34em}
+  .contact{list-style:none; display:flex; flex-wrap:wrap; gap:10px 20px; padding:0; margin:0; font-size:15px}
+  .contact a{text-decoration:none; border-bottom:1px solid color-mix(in srgb, var(--accent) 35%, transparent); padding-bottom:1px}
+  .contact a:hover{border-bottom-color:var(--accent)}
+
+  /* ---------- intro ---------- */
+  .intro{padding:38px 0 10px; font-size:18px; max-width:38em}
+  .intro p{margin:0 0 16px}
+
+  /* ---------- sections ---------- */
+  section{padding:34px 0; border-top:1px solid var(--line)}
+  h2{
+    font-size:13px; letter-spacing:.13em; text-transform:uppercase;
+    color:var(--muted); font-weight:600; margin:0 0 26px;
+  }
+  article.project{margin:0 0 52px}
+  article.project:last-child{margin-bottom:0}
+  h3{font-size:24px; line-height:1.25; margin:0 0 4px; letter-spacing:-.01em; font-weight:640}
+  .meta{font-size:14px; color:var(--muted); margin:0 0 14px}
+  .project p{margin:0 0 14px; max-width:40em}
+  .tools{list-style:none; display:flex; flex-wrap:wrap; gap:7px; padding:0; margin:16px 0 0}
+  .tools li{
+    font-size:12.5px; letter-spacing:.02em; color:var(--muted);
+    background:var(--accent-soft); border:1px solid var(--line);
+    border-radius:999px; padding:3px 11px;
+  }
+
+  /* ---------- figures ---------- */
+  figure{margin:22px 0 0}
+  .grid{display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); margin:22px 0 0}
+  .grid figure{margin:0}
+  figure img{
+    display:block; width:100%; height:auto; border-radius:6px;
+    border:1px solid var(--line); background:var(--panel);
+  }
+  figcaption{font-size:13.5px; color:var(--muted); margin-top:8px; line-height:1.5}
+  .ph{
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    min-height:190px; padding:22px; border-radius:6px;
+    border:2px dashed var(--line); background:var(--panel);
+    color:var(--muted); font-size:13px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    word-break:break-all;
+  }
+  .hero img{border-radius:8px}
+
+  /* ---------- todo ---------- */
+  .todo{
+    border:2px dashed #c0392b; border-radius:6px; padding:14px 16px; margin:18px 0;
+    background:rgba(192,57,43,.06); color:#c0392b; font-size:14.5px; line-height:1.55;
+  }
+  .todo strong{display:block; letter-spacing:.08em; text-transform:uppercase; font-size:11.5px; margin-bottom:5px}
+
+  /* ---------- skills ---------- */
+  .skills{display:grid; gap:22px 40px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .skills h4{font-size:15px; margin:0 0 6px; font-weight:640}
+  .skills p{margin:0; color:var(--muted); font-size:15px}
+
+  footer{padding:34px 0 60px; border-top:1px solid var(--line); color:var(--muted); font-size:14.5px}
+  footer p{margin:0 0 6px}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <h1>John Benke</h1>
+    <p class="tagline">Mechanical engineer — design and CAD through machining, assembly, and the parts that have to actually fit.</p>
+    <ul class="contact">
+      <li><a href="https://www.linkedin.com/in/john-benke">LinkedIn</a></li>
+      <li><a href="mailto:TODO@example.com">Email</a></li>
+      <li><a href="resume.pdf">Résumé (PDF)</a></li>
+    </ul>
+    <div class="todo">
+      <strong>Fill before sending</strong>
+      Replace the email address above with your real one, and drop your résumé
+      into the repo root as <code>resume.pdf</code> (export the .docx to PDF — the
+      Trossen form takes PDF only). Then delete this box.
+    </div>
+  </header>
+
+  <div class="intro">
+    <p>I like problems that end in a physical part. Most of what follows started
+    as a model in SolidWorks and finished on a bench — machined, assembled,
+    measured, and adjusted when the first version didn't fit.</p>
+    <p>Alongside coursework I rebuild cars and motorcycles, which is where I
+    learned the parts of mechanical engineering that don't show up in a drawing:
+    tolerance stack-up you can feel, fasteners you can't reach, and the value of
+    measuring twice.</p>
+    <div class="todo">
+      <strong>Rewrite this</strong>
+      Two paragraphs of placeholder written from your project list. Say it in your
+      own voice — what you want to build, and why. Three or four sentences is plenty.
+    </div>
+  </div>
+
+  <figure class="hero">
+    <img src="images/hero-cutlass.jpg" alt="Oldsmobile Cutlass restoration project">
+  </figure>
+
+  <!-- ============================ ENGINEERING ============================ -->
+  <section id="engineering">
+    <h2>Engineering &amp; Design</h2>
+
+    <article class="project">
+      <h3>Actuation Assembly</h3>
+      <p class="meta">MEMS 3110 · Team project</p>
+      <p>A mechanical actuation assembly modeled and documented end to end in
+      SolidWorks: full 3D assembly, a released drawing package with title blocks
+      and tolerances, and a motion study to check force through the working range
+      of travel before anything was cut.</p>
+
+      <div class="todo">
+        <strong>Required — your specific contribution</strong>
+        Trossen's guide asks by name for "detailed descriptions of your projects and
+        your specific contributions, especially if it was a team effort." Write 2–3
+        sentences: which subassembly or parts were yours, what you decided and why,
+        and what changed between the first design and the one that worked. Then
+        delete this box.
+      </div>
+
+      <div class="grid">
+        <figure>
+          <img src="images/actuation-assembly.jpg" alt="SolidWorks isometric render of the actuation assembly">
+          <figcaption>Full assembly, isometric.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/actuation-drawing.jpg" alt="Released drawing sheet for the actuation assembly">
+          <figcaption>Released drawing sheet — dimensions and tolerances.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/actuation-motion.jpg" alt="Motion study output, force versus time">
+          <figcaption>Motion study: force vs. time across the range of travel.</figcaption>
+        </figure>
+      </div>
+
+      <ul class="tools">
+        <li>SolidWorks</li><li>Assembly modeling</li><li>Drawing package</li><li>Motion study</li><li>Tolerancing</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <h3>Foosball Table — 22-Component Assembly</h3>
+      <p class="meta">Coursework · Individual</p>
+      <p>A 22-component assembly built as a GD&amp;T exercise. Every mating part
+      carries datums and feature control frames, and the fits between rods,
+      bearings, and bushings were specified rather than assumed — the point of the
+      project being that the tolerances, not the nominal dimensions, decide whether
+      it moves.</p>
+
+      <div class="todo">
+        <strong>Check this paragraph</strong>
+        Confirm the fit callouts and datum scheme described here match what you
+        actually drew, and add one sentence about the hardest fit to get right.
+      </div>
+
+      <div class="grid">
+        <figure>
+          <img src="images/foosball-gdt.jpg" alt="Part drawing with GD&amp;T callouts">
+          <figcaption>Part drawing — GD&amp;T callouts and fit dimensions.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/foosball-assembly.jpg" alt="Full 22-component foosball table assembly render">
+          <figcaption>Full 22-component assembly.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/foosball-section.jpg" alt="Assembly drawing with section view and bill of materials">
+          <figcaption>Assembly drawing — section view and BOM.</figcaption>
+        </figure>
+      </div>
+
+      <ul class="tools">
+        <li>GD&amp;T</li><li>Datum schemes</li><li>Fits &amp; clearances</li><li>BOM</li><li>Section views</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- ============================ FABRICATION ============================ -->
+  <section id="fabrication">
+    <h2>Machining &amp; Fabrication</h2>
+
+    <article class="project">
+      <h3>Machine Shop — Manual Lathe &amp; Mill</h3>
+      <p class="meta">Shop coursework</p>
+      <p>Six parts produced on manual equipment, working from prints to finished
+      dimensions: turning, facing, drilling, and milling to tolerance, with
+      inspection against the drawing at each step.</p>
+      <div class="grid">
+        <figure>
+          <img src="images/shop-parts.jpg" alt="Six machined parts laid out">
+          <figcaption>Finished parts.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/shop-lathe.jpg" alt="Lathe setup mid-operation">
+          <figcaption>Lathe setup.</figcaption>
+        </figure>
+      </div>
+      <ul class="tools">
+        <li>Manual lathe</li><li>Mill</li><li>Print reading</li><li>Calipers &amp; micrometers</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <h3>Alarm Clock</h3>
+      <p class="meta">Electromechanical build</p>
+      <p>A built-from-parts alarm clock — circuit laid out and wired, then packaged
+      into an enclosure that had to hold the board, the display, and the controls
+      without any of them fighting for the same space.</p>
+      <div class="grid">
+        <figure>
+          <img src="images/clock-build.jpg" alt="Assembled alarm clock">
+          <figcaption>Assembled unit.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/clock-wiring.jpg" alt="Alarm clock circuit wiring">
+          <figcaption>Circuit layout and wiring.</figcaption>
+        </figure>
+      </div>
+      <ul class="tools">
+        <li>Circuit wiring</li><li>Soldering</li><li>Enclosure design</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- ============================ RESTORATION ============================ -->
+  <section id="restoration">
+    <h2>Restoration &amp; Personal Builds</h2>
+
+    <article class="project">
+      <h3>Oldsmobile Cutlass — Full Restoration</h3>
+      <p class="meta">Ongoing · Personal</p>
+      <p>A ground-up restoration: engine work, intake and carburetor rebuild, drum
+      brake overhaul, and floor pan replacement — cutting out the rusted sections
+      and welding in new metal. The kind of project where every step reveals the
+      next one.</p>
+
+      <div class="todo">
+        <strong>Add specifics</strong>
+        Year and model, what state it was in when you got it, and the one repair you
+        were proudest of. Hiring managers remember this project more than the
+        coursework — give it detail.
+      </div>
+
+      <div class="grid">
+        <figure>
+          <img src="images/cutlass-engine.jpg" alt="Cutlass engine work">
+          <figcaption>Engine.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/cutlass-intake-carb.jpg" alt="Intake manifold and carburetor">
+          <figcaption>Intake and carburetor.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/cutlass-drum-brake.jpg" alt="Drum brake rebuild">
+          <figcaption>Drum brake rebuild.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/cutlass-floorpan.jpg" alt="Floor pan replacement">
+          <figcaption>Floor pan replacement.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/cutlass-full.jpg" alt="Cutlass, full view">
+          <figcaption>Where it stands.</figcaption>
+        </figure>
+      </div>
+
+      <ul class="tools">
+        <li>Engine rebuild</li><li>Brake systems</li><li>Sheet metal &amp; welding</li><li>Fuel systems</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <h3>Motorcycles — Honda XR200 &amp; Aprilia SR50</h3>
+      <p class="meta">Personal</p>
+      <p>Two bikes brought back to running order. The work included fabricating an
+      exhaust from scratch and wiring an RPM gauge into the stock harness — reading
+      the existing wiring, finding a usable signal, and integrating without cutting
+      into anything that had to stay original.</p>
+
+      <div class="todo">
+        <strong>Add specifics</strong>
+        What was wrong with each bike when you got it, and how you solved the exhaust
+        fabrication. Confirm the models named above are right.
+      </div>
+
+      <div class="grid">
+        <figure>
+          <img src="images/moto-xr200.jpg" alt="Honda XR200">
+          <figcaption>Honda XR200.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/moto-sr50.jpg" alt="Aprilia SR50">
+          <figcaption>Aprilia SR50.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/moto-exhaust.jpg" alt="Fabricated exhaust installed">
+          <figcaption>Fabricated exhaust, installed.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/moto-harness.jpg" alt="RPM gauge wired into stock harness">
+          <figcaption>RPM gauge wired into the stock harness.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/moto-road.jpg" alt="Motorcycle on the road">
+          <figcaption>Running.</figcaption>
+        </figure>
+      </div>
+
+      <ul class="tools">
+        <li>Exhaust fabrication</li><li>Welding</li><li>Wiring harnesses</li><li>Engine teardown</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- ============================ SKILLS ============================ -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div>
+        <h4>CAD &amp; Documentation</h4>
+        <p>SolidWorks part and assembly modeling, drawing packages, GD&amp;T, tolerance analysis, BOMs, motion studies.</p>
+      </div>
+      <div>
+        <h4>Manufacturing</h4>
+        <p>Manual lathe and mill, welding, sheet metal work, fabrication from prints, dimensional inspection.</p>
+      </div>
+      <div>
+        <h4>Mechanical Systems</h4>
+        <p>Engine rebuild, brake and fuel systems, drivetrain, wiring harnesses and instrumentation.</p>
+      </div>
+      <div>
+        <h4>Also</h4>
+        <p class="todo" style="margin:0">Add coursework, software (MATLAB? Revit? Fusion?), and any certifications. Delete this box when done.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>John Benke · <a href="https://www.linkedin.com/in/john-benke">LinkedIn</a></p>
+    <p>Built and hosted on GitHub Pages.</p>
+  </footer>
+
+</div>
+
+<script>
+// Any <figure> whose image is missing renders a dashed placeholder naming the
+// file it wants — so a hole is obvious to you, not silently blank to a reader.
+document.querySelectorAll('figure img').forEach(function (img) {
+  img.addEventListener('error', function () {
+    var ph = document.createElement('div');
+    ph.className = 'ph';
+    ph.textContent = 'missing: ' + img.getAttribute('src');
+    img.replaceWith(ph);
+  });
+});
+</script>
+
+</body>
+</html>
