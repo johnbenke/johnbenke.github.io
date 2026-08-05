@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ghost Armoire Set Piece (G.A.S.P.) — John Benke</title>
+<meta name="description" content="Human-powered stage mechanism for A Christmas Carol, taken from stakeholder interview to a released drawing package.">
+<meta property="og:title" content="Ghost Armoire Set Piece (G.A.S.P.) — John Benke">
+<meta property="og:description" content="Human-powered stage mechanism for A Christmas Carol, taken from stakeholder interview to a released drawing package.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://johnbenke.github.io/gasp.html">
+<meta property="og:image" content="https://johnbenke.github.io/images/gasp-render-open.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← John Benke</a>
+  <header class="phead">
+    <h1>Ghost Armoire Set Piece (G.A.S.P.)</h1>
+    <p class="meta">MEMS 3110 Machine Elements · Team design project · Spring 2026</p>
+  </header>
+  <div class="pbody">
+    <article class="last">
+      <p class="overview">A stage illusion, engineered. In <em>A Christmas Carol</em>, the
+      script calls for the Ghost of Christmas Past to levitate out of a large cabinet and
+      drift toward Scrooge. Our client — Prof. Rob Mark Morgan, a set designer — needed that
+      to actually happen on a stage: the armoire doors swing open by themselves, the
+      performer floats forward out of the cabinet and descends to the floor, and the doors
+      close behind her. No motors, no pneumatics, nothing the audience can see. Every motion
+      is driven by stagehands hidden behind the cabinet through cords, torsion springs and
+      linkages.</p>
+      <p class="overview">That constraint is what turned a carpentry job into an engineering
+      one: a 200–250 lb design load carrying a live performer, moved smoothly and repeatably,
+      show after show, on nothing but human effort routed through mechanical advantage.</p>
+
+      <ul class="metrics">
+        <li><b>~207 lbf</b><span>peak platform force</span></li>
+        <li><b>58 / 97 lbf</b><span>door open / close</span></li>
+        <li><b>16-line</b><span>bill of materials</span></li>
+        <li><b>4 sheets</b><span>released drawings</span></li>
+        <li><b>2–3</b><span>stagehands required</span></li>
+      </ul>
+
+      <div class="grid tech">
+        <figure>
+          <img src="images/gasp-render-open.jpg" alt="Rendered armoire with doors open, annotated with the torsion spring and door cord mechanism">
+          <figcaption>Doors open. Torsion springs at the hinges supply the opening torque; a stagehand releases cords attached to the door eyebolts to let them swing.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gasp-render-extended.jpg" alt="Rendered armoire with the performer platform translated forward on its sliding track">
+          <figcaption>Platform extended. A stagehand pushes the push bar to slide the platform forward on rails while a three-bar linkage holds it elevated.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gasp-render-lowered.jpg" alt="Rendered armoire with the platform lowered to the stage floor">
+          <figcaption>Lowered to the stage by paying out a cord that runs from the platform eyebolt up through a ceiling eyebolt to the stagehand.</figcaption>
+        </figure>
+      </div>
+
+      <h4>How the illusion works</h4>
+      <ul class="pts">
+        <li><strong>Doors.</strong> Torsion springs at the hinges drive the doors open; cords
+        threaded through eyebolts on each door and released by a stagehand control the rate,
+        so both doors open together and rest against a doorstop. Retracting the same cords
+        closes them.</li>
+        <li><strong>Translation.</strong> The performer's platform rides on linear slides and
+        is pushed forward out of the cabinet on a push bar, with built-in bump stops keeping
+        the rails from overrunning their track.</li>
+        <li><strong>Descent.</strong> A three-bar linkage lifts the platform clear of its
+        support; a cord running from the platform eyebolt up through a ceiling eyebolt to a
+        stagehand then lowers the actor to the stage under control.</li>
+        <li><strong>Concealment.</strong> A fog machine and dark staging hide the mechanism
+        and the stagehands, which is what lets the whole thing read as levitation.</li>
+      </ul>
+
+      <h4>Design process</h4>
+      <ul class="pts">
+        <li>Interviewed the set designer for ~45 minutes to pull functional requirements from
+        the script and the staging, then benchmarked comparable devices and patents.</li>
+        <li>Defined 13 weighted customer needs and translated them into 12 quantitative
+        target specifications — platform capacity ≥200–250 lb, door opening 6–10 s, opened
+        door angle ≥135–150°, operator hand force &lt;10–15 lb, foot force &lt;40–75 lb,
+        performer-to-pinch-point clearance ≥8–16 in, cost &lt;$300–500, fabrication
+        ≤15–30 hours.</li>
+        <li>Built a function-tree decomposition and morphological chart, then developed and
+        formally evaluated four concepts — Rolling Lever (counterweighted cantilever), Crane
+        (overhead cable and pulley), Vanishing Platform (translating platform) and
+        Self-Driving Linkage (four-bar) — through a weighted decision matrix before
+        committing.</li>
+      </ul>
+
+      <div class="grid tech">
+        <figure>
+          <img src="images/gasp-drawing-closed.jpg" alt="Released drawing sheet showing the armoire with doors closed">
+          <figcaption>Sheet 1 — doors closed.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gasp-drawing-open.jpg" alt="Released drawing sheet showing the armoire with doors open">
+          <figcaption>Sheet 2 — doors open.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gasp-drawing-extended.jpg" alt="Released drawing sheet showing the platform extended forward">
+          <figcaption>Sheet 3 — platform extended.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gasp-drawing-lowered.jpg" alt="Released drawing sheet showing the platform lowered to the stage">
+          <figcaption>Sheet 4 — lowered to the stage.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gasp-bom.jpg" alt="Assembly drawing with the 16-line bill of materials">
+          <figcaption>Assembly drawing and 16-line bill of materials.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gasp-components.jpg" alt="Labeled interior view identifying the platform, push bar, platform support and cable eye-hooks">
+          <figcaption>Key components, labeled for the operator's manual.</figcaption>
+        </figure>
+      </div>
+
+      <h4>Analysis &amp; verification</h4>
+      <ul class="pts">
+        <li>Performed static equilibrium, moment-balance and free-body diagram analysis to
+        evaluate tip-over stability and size the counterweight under full design load.</li>
+        <li>Derived push-rod linkage geometry trigonometrically to determine maximum
+        actuation angle and identify three governing limits on smooth, symmetric, repeatable
+        motion: asymmetric operator input rates, unfavorable mechanical leverage against high
+        rotational inertia, and a continuously varying hinge moment arm.</li>
+        <li>Verified support beam adequacy through beam deflection analysis (δ = FL³/3EI) and
+        estimated required actuation force through static friction and coefficient analysis.</li>
+        <li>Quantified actuation loads in SolidWorks Motion, modeling friction at the rail and
+        track system and at the three-bar linkage — ~207 lbf peak to extend the platform,
+        which is what drove the 2–3 stagehand staffing requirement.</li>
+        <li>Stated the limits of the model rather than burying them: friction at the cords and
+        eyebolts was not modeled, and the analysis was quasi-static, so both the door-closing
+        overstatement and the door-opening understatement were identified and explained per
+        mechanism.</li>
+      </ul>
+
+      <div class="grid tech">
+        <figure>
+          <img src="images/gasp-motion-force.jpg" alt="Plot of force magnitude required to extend the platform, peaking above 200 lb">
+          <figcaption>SolidWorks Motion: force to extend the platform, peaking at ~207 lb.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gasp-door-open-force.jpg" alt="Plot of door opening force against time, highest at the closed position">
+          <figcaption>Door opening force — highest at the closed position, where the torsion springs are wound.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gasp-door-close-force.jpg" alt="Plot of door closing force against time, rising toward the closed position">
+          <figcaption>Door closing force, rising to ~97 lb as the springs are re-wound.</figcaption>
+        </figure>
+      </div>
+
+      <h4>Deliverables</h4>
+      <ul class="pts">
+        <li>Released a complete SolidWorks assembly with a 16-line bill of materials and four
+        drawing sheets covering the closed, open, extended and lowered states.</li>
+        <li>Authored a technical design report and a standalone operator's manual — a
+        six-step procedure with itemized warnings, written for stagehands rather than
+        engineers.</li>
+      </ul>
+
+      <ul class="tools">
+        <li>SolidWorks</li><li>SolidWorks Motion</li><li>Requirements engineering</li>
+        <li>Free-body analysis</li><li>Beam deflection</li><li>Linkage kinematics</li>
+        <li>Drawing release</li><li>Operator documentation</li>
+      </ul>
+    </article>
+  </div>
+  <nav class="nextprev">
+    <span></span>
+    <a href="foosball.html">Foosball Table — CAD &amp; GD&amp;T →</a>
+  </nav>
+  <footer>
+    <p><a href="mailto:johnjbenke@gmail.com">johnjbenke@gmail.com</a> · <a href="https://www.linkedin.com/in/john-benke">LinkedIn</a></p>
+    <p><a href="./">All projects</a> · John Benke, Mechanical Engineering, Washington University in St. Louis.</p>
+  </footer>
+</div>
+
+<script>
+// If an image is missing, drop its figure rather than showing a broken frame.
+document.querySelectorAll('figure img').forEach(function (img) {
+  img.addEventListener('error', function () {
+    var fig = img.closest('figure');
+    if (fig) fig.remove();
+  });
+});
+</script>
+</body>
+</html>

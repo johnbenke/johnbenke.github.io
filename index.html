@@ -1,14 +1,4 @@
 <!DOCTYPE html>
-<!--
-  John Benke — engineering portfolio. Single file, no build step.
-
-  Content is drawn from John_Benke_Engineering_Portfolio.docx and
-  John_Benke_Master_File.docx. Every claim and figure on this page traces
-  back to one of those two documents; nothing here was invented.
-
-  Open items are tracked in NOTES.md, not as visible boxes on the page —
-  the site is public, so unanswered questions live in the repo instead.
--->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -16,130 +6,13 @@
 <title>John Benke — Mechanical Engineering Portfolio</title>
 <meta name="description" content="Mechanical engineering portfolio of John Benke, Washington University in St. Louis '27 — mechanism design and SolidWorks, finite element and thermal analysis, machining, and vehicle restoration.">
 <meta property="og:title" content="John Benke — Mechanical Engineering Portfolio">
-<meta property="og:description" content="Mechanism design, thermal and FE analysis, machining, and vehicle restoration. Washington University in St. Louis, B.S. Mechanical Engineering '27.">
+<meta property="og:description" content="Mechanical engineering portfolio of John Benke, Washington University in St. Louis '27 — mechanism design and SolidWorks, finite element and thermal analysis, machining, and vehicle restoration.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://johnbenke.github.io/">
 <meta property="og:image" content="https://johnbenke.github.io/images/hero-cutlass.jpg">
-<style>
-  :root{
-    --bg:#fbfaf8; --panel:#fff; --ink:#15171c; --muted:#5c636f;
-    --line:#e4e1db; --accent:#9a4a26; --accent-soft:#f5ede8;
-  }
-  @media (prefers-color-scheme:dark){
-    :root{
-      --bg:#131417; --panel:#191b1f; --ink:#e9e7e3; --muted:#9aa1ab;
-      --line:#2a2d33; --accent:#e28a5c; --accent-soft:#221b17;
-    }
-  }
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
-  body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:940px; margin:0 auto; padding:0 24px}
-  a{color:var(--accent)}
-
-  /* ---------- masthead ---------- */
-  .masthead{padding:60px 0 34px}
-  h1{font-size:clamp(34px,6vw,52px); line-height:1.04; margin:0 0 12px; letter-spacing:-.022em; font-weight:640}
-  .sub{font-size:clamp(17px,2.3vw,20px); color:var(--muted); margin:0 0 8px; max-width:36em}
-  .school{font-size:15.5px; color:var(--muted); margin:0 0 22px}
-  .contact{list-style:none; display:flex; flex-wrap:wrap; gap:9px 20px; padding:0; margin:0; font-size:15px}
-  .contact a{text-decoration:none; border-bottom:1px solid color-mix(in srgb,var(--accent) 35%,transparent); padding-bottom:1px}
-  .contact a:hover{border-bottom-color:var(--accent)}
-
-  /* ---------- hero ---------- */
-  .hero{margin:34px 0 0; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); gap:26px; align-items:center}
-  @media (max-width:700px){ .hero{grid-template-columns:1fr} }
-  .hero img{display:block; width:100%; height:auto; max-height:460px; object-fit:cover; object-position:50% 42%; border-radius:8px; border:1px solid var(--line)}
-  .hero p{margin:0 0 15px; font-size:17.5px}
-  .hero p:last-child{margin-bottom:0}
-
-  /* ---------- nav ---------- */
-  nav{
-    position:sticky; top:0; z-index:5; margin-top:40px;
-    background:var(--bg);
-    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
-  }
-  nav ul{list-style:none; display:flex; flex-wrap:wrap; gap:6px 22px; margin:0 auto; padding:12px 24px; max-width:940px; font-size:14px}
-  nav a{color:var(--muted); text-decoration:none}
-  nav a:hover{color:var(--accent)}
-
-  /* ---------- sections ---------- */
-  section{padding:44px 0 8px; scroll-margin-top:56px}
-  h2{font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:640; margin:0 0 30px}
-  article{padding-bottom:46px; margin-bottom:44px; border-bottom:1px solid var(--line)}
-  section:last-of-type article:last-child, article.last{border-bottom:0; margin-bottom:0}
-  h3{font-size:25px; line-height:1.22; margin:0 0 5px; letter-spacing:-.012em; font-weight:640}
-  .meta{font-size:14px; color:var(--muted); margin:0 0 16px}
-  .overview{margin:0 0 20px; max-width:41em}
-
-  h4{
-    font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted);
-    font-weight:640; margin:24px 0 9px;
-  }
-  ul.pts{margin:0; padding-left:20px; max-width:41em}
-  ul.pts li{margin-bottom:8px}
-  ul.pts li::marker{color:var(--muted)}
-
-  /* ---------- metrics ---------- */
-  .metrics{
-    list-style:none; display:flex; flex-wrap:wrap; gap:10px; padding:0; margin:20px 0 0;
-  }
-  .metrics li{
-    background:var(--accent-soft); border:1px solid var(--line); border-radius:6px;
-    padding:9px 14px; min-width:118px;
-  }
-  .metrics b{display:block; font-size:19px; font-weight:660; letter-spacing:-.01em; line-height:1.2}
-  .metrics span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
-
-  /* ---------- skills chips ---------- */
-  .tools{list-style:none; display:flex; flex-wrap:wrap; gap:7px; padding:0; margin:22px 0 0}
-  .tools li{
-    font-size:12.5px; color:var(--muted); background:var(--panel);
-    border:1px solid var(--line); border-radius:999px; padding:3px 11px;
-  }
-
-  /* ---------- figures ---------- */
-  .grid{display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); margin:26px 0 0}
-  .grid figure{margin:0}
-  figure img{display:block; width:100%; height:250px; object-fit:cover; border-radius:6px; border:1px solid var(--line); background:var(--panel)}
-  /* Drawings, plots and renders must not be cropped — show the whole sheet. */
-  .grid.tech figure img{height:290px; object-fit:contain; background:#fff; padding:6px}
-  figcaption{font-size:13px; color:var(--muted); margin-top:7px; line-height:1.45}
-
-  /* ---------- data tables ---------- */
-  .tw{overflow-x:auto; margin:22px 0 0; -webkit-overflow-scrolling:touch}
-  table{border-collapse:collapse; font-size:14.5px; min-width:420px}
-  th,td{text-align:right; padding:7px 14px 7px 0; border-bottom:1px solid var(--line); white-space:nowrap}
-  th:first-child,td:first-child{text-align:left}
-  thead th{font-size:11.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--muted); font-weight:640}
-  tbody tr.best td{color:var(--accent); font-weight:640}
-  table caption{caption-side:bottom; text-align:left; font-size:13px; color:var(--muted); padding-top:9px}
-
-  /* ---------- code ---------- */
-  pre{
-    overflow-x:auto; margin:22px 0 0; padding:16px 18px; border-radius:6px;
-    background:var(--panel); border:1px solid var(--line);
-    font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  }
-  pre .c{color:var(--muted)}
-
-  /* ---------- skills / coursework blocks ---------- */
-  .rows{display:grid; gap:20px}
-  .row{display:grid; grid-template-columns:190px 1fr; gap:6px 26px}
-  @media (max-width:640px){ .row{grid-template-columns:1fr} }
-  .row dt{font-size:14.5px; font-weight:640}
-  .row dd{margin:0; color:var(--muted); font-size:15px}
-
-  footer{padding:40px 0 64px; border-top:1px solid var(--line); color:var(--muted); font-size:14.5px; margin-top:44px}
-  footer p{margin:0 0 6px}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <div class="wrap">
   <header class="masthead">
     <h1>John Benke</h1>
@@ -164,613 +37,85 @@
       </div>
     </div>
   </header>
-</div>
 
-<nav>
-  <ul>
-    <li><a href="#design">Design &amp; CAD</a></li>
-    <li><a href="#analysis">Analysis &amp; Simulation</a></li>
-    <li><a href="#build">Build &amp; Fabrication</a></li>
-    <li><a href="#restoration">Restoration</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#education">Education</a></li>
-  </ul>
-</nav>
-
-<div class="wrap">
-
-  <!-- ==================== DESIGN & CAD ==================== -->
-  <section id="design">
-    <h2>Mechanical Design &amp; CAD</h2>
-
-    <article>
-      <h3>Ghost Armoire Set Piece (G.A.S.P.)</h3>
-      <p class="meta">MEMS 3110 Machine Elements · Team design project · Spring 2026</p>
-      <p class="overview">A stage illusion, engineered. In <em>A Christmas Carol</em>, the
-      script calls for the Ghost of Christmas Past to levitate out of a large cabinet and
-      drift toward Scrooge. Our client — Prof. Rob Mark Morgan, a set designer — needed that
-      to actually happen on a stage: the armoire doors swing open by themselves, the
-      performer floats forward out of the cabinet and descends to the floor, and the doors
-      close behind her. No motors, no pneumatics, nothing the audience can see. Every motion
-      is driven by stagehands hidden behind the cabinet through cords, torsion springs and
-      linkages.</p>
-      <p class="overview">That constraint is what turned a carpentry job into an engineering
-      one: a 200–250 lb design load carrying a live performer, moved smoothly and repeatably,
-      show after show, on nothing but human effort routed through mechanical advantage.</p>
-
-      <ul class="metrics">
-        <li><b>~207 lbf</b><span>peak platform force</span></li>
-        <li><b>58 / 97 lbf</b><span>door open / close</span></li>
-        <li><b>16-line</b><span>bill of materials</span></li>
-        <li><b>4 sheets</b><span>released drawings</span></li>
-        <li><b>2–3</b><span>stagehands required</span></li>
-      </ul>
-
-      <div class="grid tech">
-        <figure>
-          <img src="images/gasp-render-open.jpg" alt="Rendered armoire with doors open, annotated with the torsion spring and door cord mechanism">
-          <figcaption>Doors open. Torsion springs at the hinges supply the opening torque; a stagehand releases cords attached to the door eyebolts to let them swing.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/gasp-render-extended.jpg" alt="Rendered armoire with the performer platform translated forward on its sliding track">
-          <figcaption>Platform extended. A stagehand pushes the push bar to slide the platform forward on rails while a three-bar linkage holds it elevated.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/gasp-render-lowered.jpg" alt="Rendered armoire with the platform lowered to the stage floor">
-          <figcaption>Lowered to the stage by paying out a cord that runs from the platform eyebolt up through a ceiling eyebolt to the stagehand.</figcaption>
-        </figure>
-      </div>
-
-      <h4>How the illusion works</h4>
-      <ul class="pts">
-        <li><strong>Doors.</strong> Torsion springs at the hinges drive the doors open; cords
-        threaded through eyebolts on each door and released by a stagehand control the rate,
-        so both doors open together and rest against a doorstop. Retracting the same cords
-        closes them.</li>
-        <li><strong>Translation.</strong> The performer's platform rides on linear slides and
-        is pushed forward out of the cabinet on a push bar, with built-in bump stops keeping
-        the rails from overrunning their track.</li>
-        <li><strong>Descent.</strong> A three-bar linkage lifts the platform clear of its
-        support; a cord running from the platform eyebolt up through a ceiling eyebolt to a
-        stagehand then lowers the actor to the stage under control.</li>
-        <li><strong>Concealment.</strong> A fog machine and dark staging hide the mechanism
-        and the stagehands, which is what lets the whole thing read as levitation.</li>
-      </ul>
-
-      <h4>Design process</h4>
-      <ul class="pts">
-        <li>Interviewed the set designer for ~45 minutes to pull functional requirements from
-        the script and the staging, then benchmarked comparable devices and patents.</li>
-        <li>Defined 13 weighted customer needs and translated them into 12 quantitative
-        target specifications — platform capacity ≥200–250 lb, door opening 6–10 s, opened
-        door angle ≥135–150°, operator hand force &lt;10–15 lb, foot force &lt;40–75 lb,
-        performer-to-pinch-point clearance ≥8–16 in, cost &lt;$300–500, fabrication
-        ≤15–30 hours.</li>
-        <li>Built a function-tree decomposition and morphological chart, then developed and
-        formally evaluated four concepts — Rolling Lever (counterweighted cantilever), Crane
-        (overhead cable and pulley), Vanishing Platform (translating platform) and
-        Self-Driving Linkage (four-bar) — through a weighted decision matrix before
-        committing.</li>
-      </ul>
-
-      <div class="grid tech">
-        <figure>
-          <img src="images/gasp-drawing-closed.jpg" alt="Released drawing sheet showing the armoire with doors closed">
-          <figcaption>Sheet 1 — doors closed.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/gasp-drawing-open.jpg" alt="Released drawing sheet showing the armoire with doors open">
-          <figcaption>Sheet 2 — doors open.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/gasp-drawing-extended.jpg" alt="Released drawing sheet showing the platform extended forward">
-          <figcaption>Sheet 3 — platform extended.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/gasp-drawing-lowered.jpg" alt="Released drawing sheet showing the platform lowered to the stage">
-          <figcaption>Sheet 4 — lowered to the stage.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/gasp-bom.jpg" alt="Assembly drawing with the 16-line bill of materials">
-          <figcaption>Assembly drawing and 16-line bill of materials.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/gasp-components.jpg" alt="Labeled interior view identifying the platform, push bar, platform support and cable eye-hooks">
-          <figcaption>Key components, labeled for the operator's manual.</figcaption>
-        </figure>
-      </div>
-
-      <h4>Analysis &amp; verification</h4>
-      <ul class="pts">
-        <li>Performed static equilibrium, moment-balance and free-body diagram analysis to
-        evaluate tip-over stability and size the counterweight under full design load.</li>
-        <li>Derived push-rod linkage geometry trigonometrically to determine maximum
-        actuation angle and identify three governing limits on smooth, symmetric, repeatable
-        motion: asymmetric operator input rates, unfavorable mechanical leverage against high
-        rotational inertia, and a continuously varying hinge moment arm.</li>
-        <li>Verified support beam adequacy through beam deflection analysis (δ = FL³/3EI) and
-        estimated required actuation force through static friction and coefficient analysis.</li>
-        <li>Quantified actuation loads in SolidWorks Motion, modeling friction at the rail and
-        track system and at the three-bar linkage — ~207 lbf peak to extend the platform,
-        which is what drove the 2–3 stagehand staffing requirement.</li>
-        <li>Stated the limits of the model rather than burying them: friction at the cords and
-        eyebolts was not modeled, and the analysis was quasi-static, so both the door-closing
-        overstatement and the door-opening understatement were identified and explained per
-        mechanism.</li>
-      </ul>
-
-      <div class="grid tech">
-        <figure>
-          <img src="images/gasp-motion-force.jpg" alt="Plot of force magnitude required to extend the platform, peaking above 200 lb">
-          <figcaption>SolidWorks Motion: force to extend the platform, peaking at ~207 lb.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/gasp-door-open-force.jpg" alt="Plot of door opening force against time, highest at the closed position">
-          <figcaption>Door opening force — highest at the closed position, where the torsion springs are wound.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/gasp-door-close-force.jpg" alt="Plot of door closing force against time, rising toward the closed position">
-          <figcaption>Door closing force, rising to ~97 lb as the springs are re-wound.</figcaption>
-        </figure>
-      </div>
-
-      <h4>Deliverables</h4>
-      <ul class="pts">
-        <li>Released a complete SolidWorks assembly with a 16-line bill of materials and four
-        drawing sheets covering the closed, open, extended and lowered states.</li>
-        <li>Authored a technical design report and a standalone operator's manual — a
-        six-step procedure with itemized warnings, written for stagehands rather than
-        engineers.</li>
-      </ul>
-
-      <ul class="tools">
-        <li>SolidWorks</li><li>SolidWorks Motion</li><li>Requirements engineering</li>
-        <li>Free-body analysis</li><li>Beam deflection</li><li>Linkage kinematics</li>
-        <li>Drawing release</li><li>Operator documentation</li>
-      </ul>
-    </article>
-
-    <article class="last">
-      <h3>Foosball Table — CAD &amp; GD&amp;T Tolerancing</h3>
-      <p class="meta">MEMS 202 Computer-Aided Design · Team project · Spring 2024</p>
-      <p class="overview">A full CAD exercise taken all the way to a released drawing package:
-      a complete foosball table assembly of 8 unique part types across 22 components, with
-      GD&amp;T applied to every rotating and sliding interface using standard ANSI free-running
-      fit tables. The decisions that mattered most were about what <em>not</em> to build — a
-      tube-based ball-return system and corner ramps were deliberately scoped out in favour of
-      a simpler, cheaper design that met the same functional requirements.</p>
-
-      <ul class="metrics">
-        <li><b>22</b><span>components</span></li>
-        <li><b>8</b><span>unique part types</span></li>
-        <li><b>1.000″–1.002″</b><span>bore vs. 0.9953″–0.9965″ shaft</span></li>
-      </ul>
-
-      <h4>Design process</h4>
-      <ul class="pts">
-        <li>Defined functional requirements — unobstructed pole rotation, functional ball
-        return, integrated scoring — before any geometry was modeled.</li>
-        <li>Evaluated material trade-offs against those requirements, selecting stainless
-        steel poles for load-bearing strength against polyethylene players for cost-effective
-        replaceability.</li>
-        <li>Applied design for manufacturability by rejecting a tube-based ball-return system
-        and corner ramps, removing complexity that added cost without adding function.</li>
-        <li>Performed GD&amp;T calculations using standard ANSI free-running fit tables for
-        every rotating and sliding interface, holding the pole-to-table bore at 1.000″–1.002″
-        against a 0.9953″–0.9965″ shaft.</li>
-      </ul>
-
-      <h4>My contribution</h4>
-      <ul class="pts">
-        <li>Designed the player-model geometry, led final assembly integration of all
-        team-modeled components, and authored the background, design-process and outcomes
-        sections of the technical report.</li>
-      </ul>
-
-      <h4>Deliverables</h4>
-      <ul class="pts">
-        <li>A complete multi-sheet released drawing package: assembly drawing with section
-        views and integrated bill of materials, plus individual part drawings with full
-        dimensioning, GD&amp;T callouts, fillet and round specifications, and formal title
-        blocks.</li>
-      </ul>
-
-      <ul class="tools">
-        <li>SolidWorks</li><li>GD&amp;T</li><li>ANSI free-running fits</li>
-        <li>Tolerance stack-up</li><li>DFM</li><li>Material trade-off analysis</li>
-      </ul>
-    </article>
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul class="cards">
+      <li><a class="card" href="gasp.html">
+        <img class="thumb" src="images/thumb-gasp.jpg" alt="" loading="lazy">
+        <div class="body">
+          <p class="kicker">MEMS 3110 · Spring 2026</p>
+          <h3>Ghost Armoire Set Piece</h3>
+          <p>A stage mechanism that makes a performer appear to levitate out of a cabinet and descend to the floor — no motors, no pneumatics, all human power.</p>
+          <p class="more">Read more →</p>
+        </div>
+      </a></li>
+      <li><a class="card" href="foosball.html">
+        <div class="stat"><b>22</b><span>components</span></div>
+        <div class="body">
+          <p class="kicker">MEMS 202 · Spring 2024</p>
+          <h3>Foosball Table — CAD &amp; GD&amp;T</h3>
+          <p>A 22-component assembly taken to a released drawing package, with fits specified on every rotating and sliding interface.</p>
+          <p class="more">Read more →</p>
+        </div>
+      </a></li>
+      <li><a class="card" href="comsol.html">
+        <img class="thumb" src="images/thumb-comsol.jpg" alt="" loading="lazy">
+        <div class="body">
+          <p class="kicker">MEMS 3420 · Spring 2026</p>
+          <h3>AF16 Engine Heat Transfer</h3>
+          <p>Finite element study of an air-cooled cylinder — and, more importantly, proving the temperature field could be trusted.</p>
+          <p class="more">Read more →</p>
+        </div>
+      </a></li>
+      <li><a class="card" href="hvac.html">
+        <img class="thumb" src="images/thumb-hvac.jpg" alt="" loading="lazy">
+        <div class="body">
+          <p class="kicker">MEMS 3430 · Spring 2026</p>
+          <h3>HVAC Cooling Load &amp; Refrigerant Study</h3>
+          <p>A custom Python model re-solving the full vapor-compression cycle for five refrigerants on a real 1890 office building.</p>
+          <p class="more">Read more →</p>
+        </div>
+      </a></li>
+      <li><a class="card" href="machine-shop.html">
+        <div class="stat"><b>6</b><span>graded parts</span></div>
+        <div class="body">
+          <p class="kicker">MEMS 1001 · Fall 2023</p>
+          <h3>Machine Shop Training</h3>
+          <p>Six graded parts on manual lathe and mill, each measured against the print — where tolerances stopped being numbers.</p>
+          <p class="more">Read more →</p>
+        </div>
+      </a></li>
+      <li><a class="card" href="alarm-clock.html">
+        <div class="stat"><b>Arduino</b><span>built end to end</span></div>
+        <div class="body">
+          <p class="kicker">Circuits · Spring 2025</p>
+          <h3>Microcontroller Alarm Clock</h3>
+          <p>An Arduino build owned end to end — component sourcing, circuit design, firmware and physical assembly.</p>
+          <p class="more">Read more →</p>
+        </div>
+      </a></li>
+      <li><a class="card" href="cutlass.html">
+        <img class="thumb" src="images/cutlass-full.jpg" alt="" loading="lazy">
+        <div class="body">
+          <p class="kicker">Personal · 2020 – present</p>
+          <h3>1968 Oldsmobile Cutlass Supreme</h3>
+          <p>A non-running car returned to a reliable daily driver across 100+ documented hours, fabricating parts that no longer exist.</p>
+          <p class="more">Read more →</p>
+        </div>
+      </a></li>
+      <li><a class="card" href="motorcycles.html">
+        <img class="thumb" src="images/moto-xr200.jpg" alt="" loading="lazy">
+        <div class="body">
+          <p class="kicker">Personal · 2025 – present</p>
+          <h3>Honda SR50 &amp; XR200</h3>
+          <p>Two non-running Hondas diagnosed from symptom to cause and returned to the road, including a fabricated exhaust.</p>
+          <p class="more">Read more →</p>
+        </div>
+      </a></li>
+    </ul>
   </section>
-
-  <!-- ==================== ANALYSIS ==================== -->
-  <section id="analysis">
-    <h2>Analysis &amp; Simulation</h2>
-
-    <article>
-      <h3>AF16 Engine — Finite Element Heat Transfer Analysis</h3>
-      <p class="meta">MEMS 3420 Heat Transfer · Simulation project · Spring 2026</p>
-      <p class="overview">The Honda AF16 50cc is an air-cooled engine: it has no radiator and
-      no coolant, so the fins cast into the cylinder are the entire thermal management system.
-      If they underperform, the engine seizes. This study modeled the finned cylinder in
-      COMSOL to find out whether they were sized correctly — but the real work was proving the
-      answer could be trusted. Mesh independence first, then a benchmark against Honda's own
-      service data, then a physical explanation for the gap between the two.</p>
-
-      <ul class="metrics">
-        <li><b>~374 K</b><span>simulated base temp</span></li>
-        <li><b>490 K</b><span>manufacturer critical limit</span></li>
-        <li><b>20.7</b><span>fin effectiveness</span></li>
-        <li><b>98.7%</b><span>fin efficiency</span></li>
-        <li><b>8,556.5 mm²</b><span>fin area, derived by hand</span></li>
-      </ul>
-
-      <div class="grid tech">
-        <figure>
-          <img src="images/comsol-temp-field.jpg" alt="COMSOL volumetric temperature field across the finned cylinder section">
-          <figcaption>Steady-state temperature field. Hottest at the combustion chamber bore, coolest at the fin corners furthest from it.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/comsol-mesh.jpg" alt="Physics-controlled tetrahedral mesh of the cylinder and fin geometry">
-          <figcaption>Physics-controlled mesh — uniform, since the geometry has no regions of extreme complexity.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/comsol-cad.jpg" alt="Isometric CAD view of the symmetric half-model of the finned cylinder">
-          <figcaption>Symmetric half-model: three 4 mm fins, 10 mm apart, about a 19.25 mm cylindrical cutout.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/comsol-cutlines.jpg" alt="Temperature against arc length along three cut-lines through the fin">
-          <figcaption>Temperature along three cut-lines — horizontal, vertical and corner-to-corner — characterizing the gradient through the fin.</figcaption>
-        </figure>
-      </div>
-
-      <h4>Modeling approach</h4>
-      <ul class="pts">
-        <li>Modeled a symmetric CAD geometry of the cylinder section, exploiting symmetry
-        about the cylindrical cutout to halve solve cost without losing the gradients of
-        interest.</li>
-        <li>Derived an analytical fin surface area of 8,556.5 mm² by hand — both to support the
-        effectiveness and efficiency calculations and to give an independent check on the
-        model.</li>
-        <li>Assigned aluminum properties throughout (2,680 kg/m³, 150 W/m·K, 930 J/kg·K),
-        solved the 3D steady-state conductive and convective field with quadratic Lagrange
-        elements, and treated free convection off the fins as a boundary condition rather than
-        meshing the surrounding air.</li>
-      </ul>
-
-      <h4>Verification &amp; validation</h4>
-      <ul class="pts">
-        <li>Ran a formal mesh convergence study across five refinement levels before reporting
-        any result — maximum temperature moved less than 0.27% between the coarsest and finest
-        mesh, and was flat at 374 K from Fine onward.</li>
-        <li>Benchmarked the simulated base temperature against Honda service manual values of
-        460 K average operating and 490 K critical, confirming a safe thermal margin.</li>
-        <li>Justified the discrepancy physically rather than dismissing it: the model is
-        static and unloaded, where the published figures come from an engine under load and
-        propelling a vehicle. A transient study under forced convection would close the gap.</li>
-        <li>Computed the average convective heat transfer coefficient and derived a fin
-        effectiveness of 20.7 — well above the threshold of 2 at which fins are considered
-        worth adding — and a fin efficiency of 98.7%.</li>
-      </ul>
-
-      <div class="tw">
-        <table>
-          <caption>Mesh convergence — maximum temperature against element count.</caption>
-          <thead><tr><th>Mesh</th><th>Elements</th><th>Max temperature</th></tr></thead>
-          <tbody>
-            <tr><td>Coarse</td><td>1,573</td><td>375 K</td></tr>
-            <tr><td>Normal</td><td>2,283</td><td>375 K</td></tr>
-            <tr><td>Fine</td><td>5,433</td><td>374 K</td></tr>
-            <tr><td>Extra fine</td><td>44,787</td><td>374 K</td></tr>
-            <tr class="best"><td>Extremely fine</td><td>96,089</td><td>374 K</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <ul class="tools">
-        <li>COMSOL Multiphysics</li><li>Finite element analysis</li><li>Mesh convergence</li>
-        <li>Conduction &amp; convection</li><li>Fin effectiveness &amp; efficiency</li>
-        <li>Verification &amp; validation</li>
-      </ul>
-    </article>
-
-    <article class="last">
-      <h3>HVAC Cooling Load &amp; Refrigerant Selection Study</h3>
-      <p class="meta">MEMS 3430 Design of Thermal Systems · Applied systems project · Spring 2026</p>
-      <p class="overview">A real-building thermal systems analysis: cooling-load calculation
-      and comparative refrigerant selection for the historic Wainwright State Office Building
-      in St. Louis — ten stories, built in 1890, 117,700 sq ft of gross floor area. Rather
-      than working from published tables, the team built a custom Python simulation on top of
-      the CoolProp property library so the full cycle could be re-solved from scratch for each
-      candidate refrigerant under identical boundary conditions, making the comparison
-      defensible instead of approximate.</p>
-
-      <ul class="metrics">
-        <li><b>~1,051 kW</b><span>peak cooling load</span></li>
-        <li><b>53.1%</b><span>from solar gain</span></li>
-        <li><b>COP 4.87</b><span>recommended refrigerant</span></li>
-        <li><b>110.9 kg/s</b><span>air mass flow</span></li>
-        <li><b>5</b><span>working fluids compared</span></li>
-      </ul>
-
-      <div class="grid tech">
-        <figure>
-          <img src="images/hvac-cycle-schematic.jpg" alt="Schematic of the reverse Rankine refrigeration cycle with compressor, condenser, expansion valve and evaporator">
-          <figcaption>Reverse Rankine cycle: compressor, condenser, expansion valve, evaporator.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/hvac-cycle-ts.jpg" alt="Temperature-entropy diagram of the four-state refrigeration cycle overlaid on the vapor dome">
-          <figcaption>T–s diagram of the four-state cycle, with the isentropic and actual compression paths (2s vs. 2).</figcaption>
-        </figure>
-      </div>
-
-      <h4>Modeling approach</h4>
-      <ul class="pts">
-        <li>Built a custom Python engineering simulation on the CoolProp thermophysical
-        property library to calculate peak cooling load and model a complete
-        vapor-compression cycle.</li>
-        <li>Established design conditions under ASHRAE 55 and 90.1 — 35 °C outdoor, 22.2 °C
-        indoor, 65% relative humidity, 700 W/m² peak solar irradiance — and applied
-        pinch-point methodology (5 °C cold-side, 10 °C hot-side) to set operating
-        temperatures.</li>
-        <li>Modeled the four-state cycle (compressor, condenser, expansion valve, evaporator)
-        at 0.75 isentropic compressor efficiency, computing enthalpy and entropy at each
-        state.</li>
-      </ul>
-
-      <h4>Analysis &amp; recommendation</h4>
-      <ul class="pts">
-        <li>Calculated a total peak cooling load of ~1,051 kW and decomposed it by source —
-        solar gain through glazing 53.1%, envelope conduction 21.7%, equipment 20.8%,
-        metabolic load for 400 occupants 4.4% — identifying glazing as the dominant driver
-        and therefore the highest-leverage design target.</li>
-        <li>Conducted a comparative trade study across five candidate working fluids (R134a,
-        R410A, R407C, R1234ze(E), R1233zd(E)) under identical boundary conditions, computing
-        mass flow rate, compressor power and coefficient of performance for each.</li>
-        <li>Recommended R1233zd(E) — highest coefficient of performance (COP = 4.87) and
-        lowest compressor power draw (215.84 kW) — supported by documented thermodynamic
-        rationale.</li>
-        <li>Extended the analysis with a financial and environmental assessment covering
-        refrigerant global warming potential, rising market costs and supply shortages,
-        tightening EPA leak-repair thresholds and emerging low-refrigerant technologies.</li>
-      </ul>
-
-      <div class="tw">
-        <table>
-          <caption>Refrigerant comparison under identical boundary conditions. R1233zd(E) wins on both axes.</caption>
-          <thead><tr><th>Refrigerant</th><th>Mass flow (kg/s)</th><th>Compressor power (kW)</th><th>COP</th></tr></thead>
-          <tbody>
-            <tr><td>R134a</td><td>7.5525</td><td>230.68</td><td>4.56</td></tr>
-            <tr><td>R410A</td><td>7.1200</td><td>251.87</td><td>4.17</td></tr>
-            <tr><td>R407C</td><td>7.2824</td><td>278.41</td><td>3.78</td></tr>
-            <tr><td>R1234ze(E)</td><td>8.2664</td><td>231.75</td><td>4.54</td></tr>
-            <tr class="best"><td>R1233zd(E)</td><td>6.8092</td><td>215.84</td><td>4.87</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h4>The solver</h4>
-      <p class="overview">Each candidate fluid is pushed through the same four state points
-      from CoolProp, so no result depends on a published table that might have been generated
-      under different assumptions:</p>
-<pre><span class="c"># Refrigerant Loop</span>
-fluids = [ "R134a", "R410A", "R407C", "R1234ze(E)", "R1233zd(E)" ]
-
-for fluid in fluids:
-    h3 = PropsSI('H', 'T', t_high_K, 'Q', 0, fluid)
-    h4 = h3
-    h1 = PropsSI('H', 'T', t_low_K,  'Q', 1, fluid)
-    s1 = PropsSI('S', 'T', t_low_K,  'Q', 1, fluid)
-
-    P_low  = PropsSI('P', 'T', t_low_K,  'Q', 1, fluid)
-    P_high = PropsSI('P', 'T', t_high_K, 'Q', 0, fluid)
-    h2s    = PropsSI('H', 'P', P_high, 'S', s1, fluid)
-    h2     = h1 + (h2s - h1) / eta_comp
-
-    m_fluid = q_load / (h1 - h4)
-    w_comp  = m_fluid * (h2 - h1)
-    cop     = q_load / w_comp
-</pre>
-
-      <ul class="tools">
-        <li>Python</li><li>CoolProp</li><li>Vapor-compression cycle</li>
-        <li>ASHRAE 55 / 90.1</li><li>Pinch-point method</li><li>Trade study</li>
-      </ul>
-    </article>
-  </section>
-
-  <!-- ==================== BUILD ==================== -->
-  <section id="build">
-    <h2>Build &amp; Fabrication</h2>
-
-    <article>
-      <h3>Machine Shop Manufacturing Training</h3>
-      <p class="meta">MEMS 1001 Machine Shop Practices · Fall 2023</p>
-      <p class="overview">Six graded machining projects on manual equipment, each formally
-      evaluated for tolerance and specification compliance. What this course changed is how I
-      dimension a part — tolerances stopped being numbers on a drawing and became something I
-      had to physically hit, because I have been the person who has to make it.</p>
-
-      <h4>Process &amp; capability</h4>
-      <ul class="pts">
-        <li>Operated manual engine lathes for turning between centers and in a three-jaw
-        chuck, knurling, grooving, form turning and single-point threading.</li>
-        <li>Operated vertical milling machines using end mills, edge-finder and dial-indicator
-        alignment, and vise fixturing; operated drill presses for drilling, boring, reaming and
-        tapping.</li>
-        <li>Completed conversational CNC programming assignments on two of the six projects
-        and used digital readout (DRO) systems for precision positioning on lathes and mills.</li>
-        <li>Used precision hand tools and inspection equipment throughout: height gage,
-        scriber, edge finder, dial indicator, deburring and engraving tools, tap and tap
-        handle, drill chuck, live center.</li>
-      </ul>
-
-      <ul class="tools">
-        <li>Manual engine lathe</li><li>Vertical mill</li><li>Drill press</li>
-        <li>Conversational CNC</li><li>DRO</li><li>Precision measurement</li>
-      </ul>
-    </article>
-
-    <article class="last">
-      <h3>Microcontroller-Based Alarm Clock</h3>
-      <p class="meta">Introduction to Circuits · Final project · March – May 2025</p>
-      <p class="overview">A working alarm clock built end to end on an Arduino Uno platform:
-      multiple independent alarms, a user control interface and multiple audio outputs. I
-      owned the entire build — sourcing, circuit design, embedded programming and physical
-      assembly — which meant every integration problem between the hardware and the firmware
-      was mine to find and mine to fix.</p>
-
-      <h4>Full ownership</h4>
-      <ul class="pts">
-        <li>Designed, wired, programmed and assembled a functional alarm clock on an Arduino
-        Uno microcontroller platform.</li>
-        <li>Integrated multiple independent alarm functions, a user control interface and
-        multiple audio output speakers.</li>
-        <li>Owned component sourcing, circuit design, embedded software programming, and
-        physical assembly and integration.</li>
-      </ul>
-
-      <ul class="tools">
-        <li>Arduino Uno</li><li>Embedded programming</li><li>Circuit design</li>
-        <li>Hardware/software integration</li>
-      </ul>
-    </article>
-  </section>
-
-  <!-- ==================== RESTORATION ==================== -->
-  <section id="restoration">
-    <h2>Restoration &amp; Personal Builds</h2>
-
-    <article>
-      <h3>Classic Vehicle Restoration — 1968 Oldsmobile Cutlass Supreme</h3>
-      <p class="meta">Personal project · September 2020 – present</p>
-      <p class="overview">A non-operational 1968 Oldsmobile Cutlass Supreme brought back to a
-      reliable daily driver across more than 100 documented hours, with all parts sourcing and
-      repair research self-directed. A fifty-seven-year-old car presents a specific engineering
-      constraint: parts are discontinued and documentation is thin, so several components had
-      to be fabricated rather than ordered. This is where I first learned to work a fault
-      backward to its cause instead of guessing — a habit that carried directly into every
-      analysis project that followed.</p>
-
-      <ul class="metrics">
-        <li><b>100+</b><span>documented hours</span></li>
-        <li><b>1968</b><span>Cutlass Supreme</span></li>
-        <li><b>7</b><span>systems diagnosed &amp; repaired</span></li>
-      </ul>
-
-      <div class="grid">
-        <figure>
-          <img src="images/cutlass-engine.jpg" alt="Rebuilt engine bay of the 1968 Cutlass Supreme">
-          <figcaption>Rebuilt fuel and ignition delivery: carburetor, intake manifold, HEI distributor, plugs and wires.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/cutlass-intake-carb.jpg" alt="Replacement intake manifold beside the original intake and carburetor">
-          <figcaption>Replacement intake manifold beside the original assembly it went in for.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/cutlass-drum-brake.jpg" alt="Drum brake assembly during service">
-          <figcaption>Drum brake, cylinder and lines — braking and front-end assembly serviced end to end.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/cutlass-trunk-pan.jpg" alt="Trunk pan after structural corrosion repair">
-          <figcaption>Structural corrosion repaired in the trunk and interior floor pans.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/cutlass-full.jpg" alt="The finished 1968 Oldsmobile Cutlass Supreme">
-          <figcaption>Back to a reliable daily driver.</figcaption>
-        </figure>
-      </div>
-
-      <h4>Diagnostic &amp; fabrication process</h4>
-      <ul class="pts">
-        <li>Diagnosed faults across braking, ignition, fuel-delivery, cooling and electrical
-        systems through systematic root-cause troubleshooting, isolating a chronic carburetor
-        choke malfunction and repeated window crank failures to their underlying causes.</li>
-        <li>Fabricated custom replacement components when OEM parts were discontinued, working
-        from the failed original as the reference geometry.</li>
-        <li>Pressure-tested the vacuum and cooling systems after repair to verify the leak was
-        closed rather than assuming it.</li>
-        <li>Self-directed all research and parts sourcing, cross-referencing service
-        documentation across a 100+ hour build.</li>
-      </ul>
-
-      <h4>Work performed</h4>
-      <ul class="pts">
-        <li>Serviced the braking and front-end assembly — drum brakes, brake cylinder, brake
-        lines, front hubs — restoring stopping performance and safe wheel alignment under load.</li>
-        <li>Rebuilt the fuel and ignition delivery system: carburetor, intake manifold, HEI
-        distributor, spark plugs and spark wires.</li>
-        <li>Repaired the vacuum and cooling systems including the heater core and vacuum lines,
-        eliminating leaks and restoring climate control.</li>
-        <li>Repaired structural corrosion in the trunk and interior floor pans, reinforcing
-        chassis integrity ahead of full mechanical reassembly.</li>
-        <li>Refurbished interior and electrical components — stereo, speakers, carpet, heat
-        gauge and sensor — improving cabin functionality and instrumentation accuracy.</li>
-      </ul>
-
-      <ul class="tools">
-        <li>Systematic fault diagnosis</li><li>Custom fabrication</li><li>Brake &amp; front-end service</li>
-        <li>Ignition &amp; fuel rebuild</li><li>Corrosion repair</li><li>Pressure testing</li>
-      </ul>
-    </article>
-
-    <article class="last">
-      <h3>Motorcycle Restoration &amp; Modification</h3>
-      <p class="meta">1994 Honda Elite SR50 &amp; 1995 Honda XR200 · Personal project · February 2025 – present</p>
-      <p class="overview">Two non-running Hondas returned to operational condition. Both were
-      self-directed with no manual walking me through the failure, so every problem started as
-      a symptom and had to be narrowed to a cause before any part was ordered. The engineering
-      value here is the diagnostic method rather than the wrenching: isolating internal engine
-      wear on the XR200 to worn piston rings, instead of replacing components until something
-      worked, is the piece of this project I would most want to talk through in an interview.</p>
-
-      <div class="grid">
-        <figure>
-          <img src="images/moto-xr200.jpg" alt="1995 Honda XR200 in the shop">
-          <figcaption>1995 Honda XR200 — engine wear isolated to worn piston rings.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/moto-sr50.jpg" alt="1994 Honda Elite SR50 scooter">
-          <figcaption>1994 Honda Elite SR50, mid-rebuild.</figcaption>
-        </figure>
-        <figure>
-          <img src="images/moto-road.jpg" alt="The restored Honda Elite SR50 running">
-          <figcaption>Back on the road.</figcaption>
-        </figure>
-      </div>
-
-      <h4>Diagnostic process</h4>
-      <ul class="pts">
-        <li>Worked each fault backward from symptom to cause — compression and performance
-        loss on the XR200 traced to worn piston rings; inconsistent running on both vehicles
-        traced to carburetor contamination and calibration rather than ignition.</li>
-        <li>Validated every repair through iterative test cycles before moving to the next
-        system, isolating one variable at a time so a fix could be confirmed as the fix.</li>
-        <li>Evaluated OEM against aftermarket components for fit, material and performance
-        compatibility before committing to a part.</li>
-      </ul>
-
-      <h4>Work performed</h4>
-      <ul class="pts">
-        <li>Rebuilt or modified engine, fuel-delivery, braking, suspension, drivetrain and
-        electrical systems across both vehicles, returning each to operational condition.</li>
-        <li>Fabricated and installed a new exhaust system.</li>
-        <li>Integrated a new RPM gauge into the existing wiring harness, tracing circuits and
-        troubleshooting electrical compatibility with the stock system.</li>
-        <li>Overhauled the braking system end to end on both vehicles and refurbished
-        suspension seals to restore ride quality and prevent fluid leakage.</li>
-        <li>Cleaned and recalibrated carburetors to resolve fuel delivery failures and restore
-        consistent engine performance.</li>
-      </ul>
-
-      <ul class="tools">
-        <li>Root cause analysis</li><li>Engine &amp; drivetrain rebuild</li><li>Carburetion</li>
-        <li>Harness integration</li><li>Exhaust fabrication</li><li>Iterative validation</li>
-      </ul>
-    </article>
-  </section>
-
-  <!-- ==================== SKILLS ==================== -->
-  <section id="skills">
+<section id="skills">
     <h2>Technical Skills</h2>
     <dl class="rows">
       <div class="row">
@@ -806,13 +151,10 @@ for fluid in fluids:
       </div>
       <div class="row">
         <dt>Codes &amp; Standards</dt>
-        <dd>ASHRAE 90.1, ASHRAE 55, IEC 60825-1, IEC 62133-2.</dd>
+        <dd>ASHRAE 90.1, ASHRAE 55.</dd>
       </div>
     </dl>
-  </section>
-
-  <!-- ==================== EDUCATION ==================== -->
-  <section id="education">
+  </section><section id="education">
     <h2>Education &amp; Coursework</h2>
     <p class="overview"><strong>Washington University in St. Louis</strong>, McKelvey School of
     Engineering — B.S. Mechanical Engineering, graduating May 2027. NCAA varsity football
@@ -846,12 +188,10 @@ for fluid in fluids:
       </div>
     </dl>
   </section>
-
   <footer>
     <p><a href="mailto:johnjbenke@gmail.com">johnjbenke@gmail.com</a> · <a href="https://www.linkedin.com/in/john-benke">LinkedIn</a></p>
     <p>John Benke — Mechanical Engineering, Washington University in St. Louis.</p>
   </footer>
-
 </div>
 
 <script>
@@ -863,6 +203,5 @@ document.querySelectorAll('figure img').forEach(function (img) {
   });
 });
 </script>
-
 </body>
 </html>

@@ -38,11 +38,36 @@ tick **Enforce HTTPS**.
 
 ---
 
-## 3. Adding images
+## 3. How the site is laid out
 
-Drop the file in `images/`, then add a `<figure>` to the matching project in
-`index.html`. [`NOTES.md`](NOTES.md) lists which visuals are still missing and
-what each should show, in priority order.
+`index.html` is a card grid — eight projects, photo or headline number, one
+line each. Every card links to its own page:
+
+| Page | Project |
+|---|---|
+| `gasp.html` | Ghost Armoire Set Piece (MEMS 3110) |
+| `foosball.html` | Foosball Table CAD & GD&T (MEMS 202) |
+| `comsol.html` | AF16 Engine heat transfer (MEMS 3420) |
+| `hvac.html` | HVAC cooling load & refrigerant study (MEMS 3430) |
+| `machine-shop.html` | Machine Shop training (MEMS 1001) |
+| `alarm-clock.html` | Microcontroller alarm clock |
+| `cutlass.html` | 1968 Oldsmobile Cutlass Supreme |
+| `motorcycles.html` | Honda SR50 & XR200 |
+
+Each project has its own URL, so you can send a company straight to the one
+they care about — `johnbenke.github.io/gasp.html` — instead of a link they have
+to scroll.
+
+All nine pages share `style.css`. Edit that once and every page changes.
+
+## 4. Adding images
+
+Drop the file in `images/`, then add a `<figure>` to the matching project page.
+[`NOTES.md`](NOTES.md) lists which visuals are still missing and what each
+should show, in priority order.
+
+Card thumbnails are cropped to 3:2 and named `thumb-*.jpg`. If you swap a card
+image, crop it to 3:2 first or it will be centre-cropped for you.
 
 A figure whose image file is missing removes itself rather than showing a broken
 frame, so the live page never looks half-finished — but that also means a typo in

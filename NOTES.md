@@ -21,7 +21,8 @@ contain the same paragraph about laser radiation and a **golf striker design** �
 boilerplate from a different example project. IEC 60825-1 covers laser products
 and IEC 62133-2 covers portable batteries; the GASP has neither.
 
-It has been **removed from the site**. Recommend cutting it from the résumé and
+It has been **removed from the site** — from the project page and from the
+skills list. Recommend cutting it from the résumé and
 the portfolio doc too. An interviewer who asks "how did laser safety apply to a
 wooden armoire?" gets nothing, and that costs more than the line is worth.
 
@@ -47,12 +48,22 @@ that number carries weight on the page.
 lifts that section; the alarm clock has no code and no photo, so it is the
 weakest entry on the page. Even the alarm-check loop would help.
 
-**Photos still missing:** the six machined parts from MEMS 1001 (lay them out,
-one overhead shot), and the finished alarm clock / breadboard wiring. These are
-the only two projects on the site with no visual at all.
+**Photos still missing.** Three projects have no image, so their cards on the
+home page use a typographic tile instead of a photo. In priority order:
+
+| Card | What would fill it |
+|---|---|
+| Foosball (MEMS 202) | One drawing sheet with GD&T callouts legible, or the 22-component assembly render |
+| Machine Shop (MEMS 1001) | The six parts laid out on a plain surface, one overhead shot |
+| Alarm Clock | The finished clock, or the breadboard wiring |
+
+The typographic tiles look deliberate rather than broken, so there is no rush —
+but a photo beats a number on a card every time. Drop the file in `images/`,
+crop to 3:2, name it `thumb-<slug>.jpg`, and swap the `<div class="stat">` in
+`index.html` for an `<img class="thumb" src="images/thumb-<slug>.jpg" alt="">`.
 
 **Résumé PDF.** Not linked. Drop `resume.pdf` in the repo root and add it to the
-contact list in the masthead.
+contact list in the masthead of `index.html`.
 
 **Phone number.** The résumé carries `(914) 574-7347`; it is deliberately *not*
 on the site, since a public page gets scraped in a way a PDF sent to one
@@ -93,8 +104,14 @@ rights) and the *A Christmas Carol* production still from the MEMS 3110 report
 (same reason).
 
 A figure whose image file is missing removes itself rather than showing a broken
-frame, so the live page never looks half-finished — but a typo in a filename
-fails silently. Check the page after adding one.
+frame, so no page ever looks half-finished — but a typo in a filename fails
+silently. Check the page after adding one.
+
+## Structure
+
+The site is a card grid (`index.html`) over eight project pages, all sharing
+`style.css`. Each project has its own URL, so a single project can be sent to a
+company directly. See `PORTFOLIO_SETUP.md` for the page-to-project map.
 
 ---
 

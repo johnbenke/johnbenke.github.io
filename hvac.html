@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HVAC Cooling Load &amp; Refrigerant Selection Study — John Benke</title>
+<meta name="description" content="Cooling load analysis and comparative refrigerant trade study built on Python and CoolProp.">
+<meta property="og:title" content="HVAC Cooling Load &amp; Refrigerant Selection Study — John Benke">
+<meta property="og:description" content="Cooling load analysis and comparative refrigerant trade study built on Python and CoolProp.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://johnbenke.github.io/hvac.html">
+<meta property="og:image" content="https://johnbenke.github.io/images/hvac-cycle-ts.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← John Benke</a>
+  <header class="phead">
+    <h1>HVAC Cooling Load &amp; Refrigerant Selection Study</h1>
+    <p class="meta">MEMS 3430 Design of Thermal Systems · Applied systems project · Spring 2026</p>
+  </header>
+  <div class="pbody">
+    <article class="last">
+      <p class="overview">A real-building thermal systems analysis: cooling-load calculation
+      and comparative refrigerant selection for the historic Wainwright State Office Building
+      in St. Louis — ten stories, built in 1890, 117,700 sq ft of gross floor area. Rather
+      than working from published tables, the team built a custom Python simulation on top of
+      the CoolProp property library so the full cycle could be re-solved from scratch for each
+      candidate refrigerant under identical boundary conditions, making the comparison
+      defensible instead of approximate.</p>
+
+      <ul class="metrics">
+        <li><b>~1,051 kW</b><span>peak cooling load</span></li>
+        <li><b>53.1%</b><span>from solar gain</span></li>
+        <li><b>COP 4.87</b><span>recommended refrigerant</span></li>
+        <li><b>110.9 kg/s</b><span>air mass flow</span></li>
+        <li><b>5</b><span>working fluids compared</span></li>
+      </ul>
+
+      <div class="grid tech">
+        <figure>
+          <img src="images/hvac-cycle-schematic.jpg" alt="Schematic of the reverse Rankine refrigeration cycle with compressor, condenser, expansion valve and evaporator">
+          <figcaption>Reverse Rankine cycle: compressor, condenser, expansion valve, evaporator.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/hvac-cycle-ts.jpg" alt="Temperature-entropy diagram of the four-state refrigeration cycle overlaid on the vapor dome">
+          <figcaption>T–s diagram of the four-state cycle, with the isentropic and actual compression paths (2s vs. 2).</figcaption>
+        </figure>
+      </div>
+
+      <h4>Modeling approach</h4>
+      <ul class="pts">
+        <li>Built a custom Python engineering simulation on the CoolProp thermophysical
+        property library to calculate peak cooling load and model a complete
+        vapor-compression cycle.</li>
+        <li>Established design conditions under ASHRAE 55 and 90.1 — 35 °C outdoor, 22.2 °C
+        indoor, 65% relative humidity, 700 W/m² peak solar irradiance — and applied
+        pinch-point methodology (5 °C cold-side, 10 °C hot-side) to set operating
+        temperatures.</li>
+        <li>Modeled the four-state cycle (compressor, condenser, expansion valve, evaporator)
+        at 0.75 isentropic compressor efficiency, computing enthalpy and entropy at each
+        state.</li>
+      </ul>
+
+      <h4>Analysis &amp; recommendation</h4>
+      <ul class="pts">
+        <li>Calculated a total peak cooling load of ~1,051 kW and decomposed it by source —
+        solar gain through glazing 53.1%, envelope conduction 21.7%, equipment 20.8%,
+        metabolic load for 400 occupants 4.4% — identifying glazing as the dominant driver
+        and therefore the highest-leverage design target.</li>
+        <li>Conducted a comparative trade study across five candidate working fluids (R134a,
+        R410A, R407C, R1234ze(E), R1233zd(E)) under identical boundary conditions, computing
+        mass flow rate, compressor power and coefficient of performance for each.</li>
+        <li>Recommended R1233zd(E) — highest coefficient of performance (COP = 4.87) and
+        lowest compressor power draw (215.84 kW) — supported by documented thermodynamic
+        rationale.</li>
+        <li>Extended the analysis with a financial and environmental assessment covering
+        refrigerant global warming potential, rising market costs and supply shortages,
+        tightening EPA leak-repair thresholds and emerging low-refrigerant technologies.</li>
+      </ul>
+
+      <div class="tw">
+        <table>
+          <caption>Refrigerant comparison under identical boundary conditions. R1233zd(E) wins on both axes.</caption>
+          <thead><tr><th>Refrigerant</th><th>Mass flow (kg/s)</th><th>Compressor power (kW)</th><th>COP</th></tr></thead>
+          <tbody>
+            <tr><td>R134a</td><td>7.5525</td><td>230.68</td><td>4.56</td></tr>
+            <tr><td>R410A</td><td>7.1200</td><td>251.87</td><td>4.17</td></tr>
+            <tr><td>R407C</td><td>7.2824</td><td>278.41</td><td>3.78</td></tr>
+            <tr><td>R1234ze(E)</td><td>8.2664</td><td>231.75</td><td>4.54</td></tr>
+            <tr class="best"><td>R1233zd(E)</td><td>6.8092</td><td>215.84</td><td>4.87</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>The solver</h4>
+      <p class="overview">Each candidate fluid is pushed through the same four state points
+      from CoolProp, so no result depends on a published table that might have been generated
+      under different assumptions:</p>
+<pre><span class="c"># Refrigerant Loop</span>
+fluids = [ "R134a", "R410A", "R407C", "R1234ze(E)", "R1233zd(E)" ]
+
+for fluid in fluids:
+    h3 = PropsSI('H', 'T', t_high_K, 'Q', 0, fluid)
+    h4 = h3
+    h1 = PropsSI('H', 'T', t_low_K,  'Q', 1, fluid)
+    s1 = PropsSI('S', 'T', t_low_K,  'Q', 1, fluid)
+
+    P_low  = PropsSI('P', 'T', t_low_K,  'Q', 1, fluid)
+    P_high = PropsSI('P', 'T', t_high_K, 'Q', 0, fluid)
+    h2s    = PropsSI('H', 'P', P_high, 'S', s1, fluid)
+    h2     = h1 + (h2s - h1) / eta_comp
+
+    m_fluid = q_load / (h1 - h4)
+    w_comp  = m_fluid * (h2 - h1)
+    cop     = q_load / w_comp
+</pre>
+
+      <ul class="tools">
+        <li>Python</li><li>CoolProp</li><li>Vapor-compression cycle</li>
+        <li>ASHRAE 55 / 90.1</li><li>Pinch-point method</li><li>Trade study</li>
+      </ul>
+    </article>
+  </div>
+  <nav class="nextprev">
+    <a href="comsol.html">← AF16 Engine Heat Transfer</a>
+    <a href="machine-shop.html">Machine Shop Training →</a>
+  </nav>
+  <footer>
+    <p><a href="mailto:johnjbenke@gmail.com">johnjbenke@gmail.com</a> · <a href="https://www.linkedin.com/in/john-benke">LinkedIn</a></p>
+    <p><a href="./">All projects</a> · John Benke, Mechanical Engineering, Washington University in St. Louis.</p>
+  </footer>
+</div>
+
+<script>
+// If an image is missing, drop its figure rather than showing a broken frame.
+document.querySelectorAll('figure img').forEach(function (img) {
+  img.addEventListener('error', function () {
+    var fig = img.closest('figure');
+    if (fig) fig.remove();
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Foosball Table — CAD &amp; GD&amp;T Tolerancing — John Benke</title>
+<meta name="description" content="SolidWorks assembly and full GD&amp;T drawing package using ANSI free-running fits.">
+<meta property="og:title" content="Foosball Table — CAD &amp; GD&amp;T Tolerancing — John Benke">
+<meta property="og:description" content="SolidWorks assembly and full GD&amp;T drawing package using ANSI free-running fits.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://johnbenke.github.io/foosball.html">
+<meta property="og:image" content="https://johnbenke.github.io/images/hero-cutlass.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← John Benke</a>
+  <header class="phead">
+    <h1>Foosball Table — CAD &amp; GD&amp;T Tolerancing</h1>
+    <p class="meta">MEMS 202 Computer-Aided Design · Team project · Spring 2024</p>
+  </header>
+  <div class="pbody">
+    <article class="last">
+      <p class="overview">A full CAD exercise taken all the way to a released drawing package:
+      a complete foosball table assembly of 8 unique part types across 22 components, with
+      GD&amp;T applied to every rotating and sliding interface using standard ANSI free-running
+      fit tables. The decisions that mattered most were about what <em>not</em> to build — a
+      tube-based ball-return system and corner ramps were deliberately scoped out in favour of
+      a simpler, cheaper design that met the same functional requirements.</p>
+
+      <ul class="metrics">
+        <li><b>22</b><span>components</span></li>
+        <li><b>8</b><span>unique part types</span></li>
+        <li><b>1.000″–1.002″</b><span>bore vs. 0.9953″–0.9965″ shaft</span></li>
+      </ul>
+
+      <h4>Design process</h4>
+      <ul class="pts">
+        <li>Defined functional requirements — unobstructed pole rotation, functional ball
+        return, integrated scoring — before any geometry was modeled.</li>
+        <li>Evaluated material trade-offs against those requirements, selecting stainless
+        steel poles for load-bearing strength against polyethylene players for cost-effective
+        replaceability.</li>
+        <li>Applied design for manufacturability by rejecting a tube-based ball-return system
+        and corner ramps, removing complexity that added cost without adding function.</li>
+        <li>Performed GD&amp;T calculations using standard ANSI free-running fit tables for
+        every rotating and sliding interface, holding the pole-to-table bore at 1.000″–1.002″
+        against a 0.9953″–0.9965″ shaft.</li>
+      </ul>
+
+      <h4>My contribution</h4>
+      <ul class="pts">
+        <li>Designed the player-model geometry, led final assembly integration of all
+        team-modeled components, and authored the background, design-process and outcomes
+        sections of the technical report.</li>
+      </ul>
+
+      <h4>Deliverables</h4>
+      <ul class="pts">
+        <li>A complete multi-sheet released drawing package: assembly drawing with section
+        views and integrated bill of materials, plus individual part drawings with full
+        dimensioning, GD&amp;T callouts, fillet and round specifications, and formal title
+        blocks.</li>
+      </ul>
+
+      <ul class="tools">
+        <li>SolidWorks</li><li>GD&amp;T</li><li>ANSI free-running fits</li>
+        <li>Tolerance stack-up</li><li>DFM</li><li>Material trade-off analysis</li>
+      </ul>
+    </article>
+  </div>
+  <nav class="nextprev">
+    <a href="gasp.html">← Ghost Armoire Set Piece</a>
+    <a href="comsol.html">AF16 Engine Heat Transfer →</a>
+  </nav>
+  <footer>
+    <p><a href="mailto:johnjbenke@gmail.com">johnjbenke@gmail.com</a> · <a href="https://www.linkedin.com/in/john-benke">LinkedIn</a></p>
+    <p><a href="./">All projects</a> · John Benke, Mechanical Engineering, Washington University in St. Louis.</p>
+  </footer>
+</div>
+
+<script>
+// If an image is missing, drop its figure rather than showing a broken frame.
+document.querySelectorAll('figure img').forEach(function (img) {
+  img.addEventListener('error', function () {
+    var fig = img.closest('figure');
+    if (fig) fig.remove();
+  });
+});
+</script>
+</body>
+</html>

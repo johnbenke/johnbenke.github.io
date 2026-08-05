@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Classic Vehicle Restoration — 1968 Oldsmobile Cutlass Supreme — John Benke</title>
+<meta name="description" content="Full mechanical restoration: brakes, ignition, fuel, cooling, corrosion repair and custom fabrication.">
+<meta property="og:title" content="Classic Vehicle Restoration — 1968 Oldsmobile Cutlass Supreme — John Benke">
+<meta property="og:description" content="Full mechanical restoration: brakes, ignition, fuel, cooling, corrosion repair and custom fabrication.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://johnbenke.github.io/cutlass.html">
+<meta property="og:image" content="https://johnbenke.github.io/images/cutlass-full.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← John Benke</a>
+  <header class="phead">
+    <h1>Classic Vehicle Restoration — 1968 Oldsmobile Cutlass Supreme</h1>
+    <p class="meta">Personal project · September 2020 – present</p>
+  </header>
+  <div class="pbody">
+    <article class="last">
+      <p class="overview">A non-operational 1968 Oldsmobile Cutlass Supreme brought back to a
+      reliable daily driver across more than 100 documented hours, with all parts sourcing and
+      repair research self-directed. A fifty-seven-year-old car presents a specific engineering
+      constraint: parts are discontinued and documentation is thin, so several components had
+      to be fabricated rather than ordered. This is where I first learned to work a fault
+      backward to its cause instead of guessing — a habit that carried directly into every
+      analysis project that followed.</p>
+
+      <ul class="metrics">
+        <li><b>100+</b><span>documented hours</span></li>
+        <li><b>1968</b><span>Cutlass Supreme</span></li>
+        <li><b>7</b><span>systems diagnosed &amp; repaired</span></li>
+      </ul>
+
+      <div class="grid">
+        <figure>
+          <img src="images/cutlass-engine.jpg" alt="Rebuilt engine bay of the 1968 Cutlass Supreme">
+          <figcaption>Rebuilt fuel and ignition delivery: carburetor, intake manifold, HEI distributor, plugs and wires.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/cutlass-intake-carb.jpg" alt="Replacement intake manifold beside the original intake and carburetor">
+          <figcaption>Replacement intake manifold beside the original assembly it went in for.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/cutlass-drum-brake.jpg" alt="Drum brake assembly during service">
+          <figcaption>Drum brake, cylinder and lines — braking and front-end assembly serviced end to end.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/cutlass-trunk-pan.jpg" alt="Trunk pan after structural corrosion repair">
+          <figcaption>Structural corrosion repaired in the trunk and interior floor pans.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/cutlass-full.jpg" alt="The finished 1968 Oldsmobile Cutlass Supreme">
+          <figcaption>Back to a reliable daily driver.</figcaption>
+        </figure>
+      </div>
+
+      <h4>Diagnostic &amp; fabrication process</h4>
+      <ul class="pts">
+        <li>Diagnosed faults across braking, ignition, fuel-delivery, cooling and electrical
+        systems through systematic root-cause troubleshooting, isolating a chronic carburetor
+        choke malfunction and repeated window crank failures to their underlying causes.</li>
+        <li>Fabricated custom replacement components when OEM parts were discontinued, working
+        from the failed original as the reference geometry.</li>
+        <li>Pressure-tested the vacuum and cooling systems after repair to verify the leak was
+        closed rather than assuming it.</li>
+        <li>Self-directed all research and parts sourcing, cross-referencing service
+        documentation across a 100+ hour build.</li>
+      </ul>
+
+      <h4>Work performed</h4>
+      <ul class="pts">
+        <li>Serviced the braking and front-end assembly — drum brakes, brake cylinder, brake
+        lines, front hubs — restoring stopping performance and safe wheel alignment under load.</li>
+        <li>Rebuilt the fuel and ignition delivery system: carburetor, intake manifold, HEI
+        distributor, spark plugs and spark wires.</li>
+        <li>Repaired the vacuum and cooling systems including the heater core and vacuum lines,
+        eliminating leaks and restoring climate control.</li>
+        <li>Repaired structural corrosion in the trunk and interior floor pans, reinforcing
+        chassis integrity ahead of full mechanical reassembly.</li>
+        <li>Refurbished interior and electrical components — stereo, speakers, carpet, heat
+        gauge and sensor — improving cabin functionality and instrumentation accuracy.</li>
+      </ul>
+
+      <ul class="tools">
+        <li>Systematic fault diagnosis</li><li>Custom fabrication</li><li>Brake &amp; front-end service</li>
+        <li>Ignition &amp; fuel rebuild</li><li>Corrosion repair</li><li>Pressure testing</li>
+      </ul>
+    </article>
+  </div>
+  <nav class="nextprev">
+    <a href="alarm-clock.html">← Microcontroller Alarm Clock</a>
+    <a href="motorcycles.html">Honda SR50 &amp; XR200 →</a>
+  </nav>
+  <footer>
+    <p><a href="mailto:johnjbenke@gmail.com">johnjbenke@gmail.com</a> · <a href="https://www.linkedin.com/in/john-benke">LinkedIn</a></p>
+    <p><a href="./">All projects</a> · John Benke, Mechanical Engineering, Washington University in St. Louis.</p>
+  </footer>
+</div>
+
+<script>
+// If an image is missing, drop its figure rather than showing a broken frame.
+document.querySelectorAll('figure img').forEach(function (img) {
+  img.addEventListener('error', function () {
+    var fig = img.closest('figure');
+    if (fig) fig.remove();
+  });
+});
+</script>
+</body>
+</html>

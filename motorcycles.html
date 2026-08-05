@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Motorcycle Restoration &amp; Modification — John Benke</title>
+<meta name="description" content="Engine, fuel, brake, suspension and electrical rebuilds on a 1994 Elite SR50 and 1995 XR200.">
+<meta property="og:title" content="Motorcycle Restoration &amp; Modification — John Benke">
+<meta property="og:description" content="Engine, fuel, brake, suspension and electrical rebuilds on a 1994 Elite SR50 and 1995 XR200.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://johnbenke.github.io/motorcycles.html">
+<meta property="og:image" content="https://johnbenke.github.io/images/moto-xr200.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← John Benke</a>
+  <header class="phead">
+    <h1>Motorcycle Restoration &amp; Modification</h1>
+    <p class="meta">1994 Honda Elite SR50 &amp; 1995 Honda XR200 · Personal project · February 2025 – present</p>
+  </header>
+  <div class="pbody">
+    <article class="last">
+      <p class="overview">Two non-running Hondas returned to operational condition. Both were
+      self-directed with no manual walking me through the failure, so every problem started as
+      a symptom and had to be narrowed to a cause before any part was ordered. The engineering
+      value here is the diagnostic method rather than the wrenching: isolating internal engine
+      wear on the XR200 to worn piston rings, instead of replacing components until something
+      worked, is the piece of this project I would most want to talk through in an interview.</p>
+
+      <div class="grid">
+        <figure>
+          <img src="images/moto-xr200.jpg" alt="1995 Honda XR200 in the shop">
+          <figcaption>1995 Honda XR200 — engine wear isolated to worn piston rings.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/moto-sr50.jpg" alt="1994 Honda Elite SR50 scooter">
+          <figcaption>1994 Honda Elite SR50, mid-rebuild.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/moto-road.jpg" alt="The restored Honda Elite SR50 running">
+          <figcaption>Back on the road.</figcaption>
+        </figure>
+      </div>
+
+      <h4>Diagnostic process</h4>
+      <ul class="pts">
+        <li>Worked each fault backward from symptom to cause — compression and performance
+        loss on the XR200 traced to worn piston rings; inconsistent running on both vehicles
+        traced to carburetor contamination and calibration rather than ignition.</li>
+        <li>Validated every repair through iterative test cycles before moving to the next
+        system, isolating one variable at a time so a fix could be confirmed as the fix.</li>
+        <li>Evaluated OEM against aftermarket components for fit, material and performance
+        compatibility before committing to a part.</li>
+      </ul>
+
+      <h4>Work performed</h4>
+      <ul class="pts">
+        <li>Rebuilt or modified engine, fuel-delivery, braking, suspension, drivetrain and
+        electrical systems across both vehicles, returning each to operational condition.</li>
+        <li>Fabricated and installed a new exhaust system.</li>
+        <li>Integrated a new RPM gauge into the existing wiring harness, tracing circuits and
+        troubleshooting electrical compatibility with the stock system.</li>
+        <li>Overhauled the braking system end to end on both vehicles and refurbished
+        suspension seals to restore ride quality and prevent fluid leakage.</li>
+        <li>Cleaned and recalibrated carburetors to resolve fuel delivery failures and restore
+        consistent engine performance.</li>
+      </ul>
+
+      <ul class="tools">
+        <li>Root cause analysis</li><li>Engine &amp; drivetrain rebuild</li><li>Carburetion</li>
+        <li>Harness integration</li><li>Exhaust fabrication</li><li>Iterative validation</li>
+      </ul>
+    </article>
+  </div>
+  <nav class="nextprev">
+    <a href="cutlass.html">← 1968 Oldsmobile Cutlass Supreme</a>
+    <span></span>
+  </nav>
+  <footer>
+    <p><a href="mailto:johnjbenke@gmail.com">johnjbenke@gmail.com</a> · <a href="https://www.linkedin.com/in/john-benke">LinkedIn</a></p>
+    <p><a href="./">All projects</a> · John Benke, Mechanical Engineering, Washington University in St. Louis.</p>
+  </footer>
+</div>
+
+<script>
+// If an image is missing, drop its figure rather than showing a broken frame.
+document.querySelectorAll('figure img').forEach(function (img) {
+  img.addEventListener('error', function () {
+    var fig = img.closest('figure');
+    if (fig) fig.remove();
+  });
+});
+</script>
+</body>
+</html>
