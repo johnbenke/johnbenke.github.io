@@ -106,7 +106,26 @@
   .grid{display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); margin:26px 0 0}
   .grid figure{margin:0}
   figure img{display:block; width:100%; height:250px; object-fit:cover; border-radius:6px; border:1px solid var(--line); background:var(--panel)}
+  /* Drawings, plots and renders must not be cropped — show the whole sheet. */
+  .grid.tech figure img{height:290px; object-fit:contain; background:#fff; padding:6px}
   figcaption{font-size:13px; color:var(--muted); margin-top:7px; line-height:1.45}
+
+  /* ---------- data tables ---------- */
+  .tw{overflow-x:auto; margin:22px 0 0; -webkit-overflow-scrolling:touch}
+  table{border-collapse:collapse; font-size:14.5px; min-width:420px}
+  th,td{text-align:right; padding:7px 14px 7px 0; border-bottom:1px solid var(--line); white-space:nowrap}
+  th:first-child,td:first-child{text-align:left}
+  thead th{font-size:11.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--muted); font-weight:640}
+  tbody tr.best td{color:var(--accent); font-weight:640}
+  table caption{caption-side:bottom; text-align:left; font-size:13px; color:var(--muted); padding-top:9px}
+
+  /* ---------- code ---------- */
+  pre{
+    overflow-x:auto; margin:22px 0 0; padding:16px 18px; border-radius:6px;
+    background:var(--panel); border:1px solid var(--line);
+    font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  pre .c{color:var(--muted)}
 
   /* ---------- skills / coursework blocks ---------- */
   .rows{display:grid; gap:20px}
@@ -135,9 +154,10 @@
       <img src="images/hero-cutlass.jpg" alt="John Benke with the 1968 Oldsmobile Cutlass Supreme he restored">
       <div>
         <p>I work best on problems that end in a physical part. The projects
-        below run from a human-powered lift mechanism taken to a released
-        drawing package, through finite element and thermodynamic analysis,
-        down to six parts cut on a manual lathe to a graded tolerance.</p>
+        below run from a stage mechanism that makes a performer appear to
+        levitate — taken to a released drawing package — through finite element
+        and thermodynamic analysis, down to six parts cut on a manual lathe to a
+        graded tolerance.</p>
         <p>The through-line is verification. A simulation nobody checked isn't
         an answer, and a fault you guessed at isn't diagnosed — a habit I picked
         up on a fifty-seven-year-old car long before I met it in a lab.</p>
@@ -164,37 +184,101 @@
     <h2>Mechanical Design &amp; CAD</h2>
 
     <article>
-      <h3>Multi-Mechanism Actuation System</h3>
+      <h3>Ghost Armoire Set Piece (G.A.S.P.)</h3>
       <p class="meta">MEMS 3110 Machine Elements · Team design project · Spring 2026</p>
-      <p class="overview">A concept-to-CAD design and verification project: a human-powered
-      lift, translation and actuation mechanism engineered to raise, move and lower a
-      payload — simulating a ~140 lb occupant against a 200–250 lb design load — through
-      a multi-degree-of-freedom linkage and platform assembly, with zero motorized or
-      pneumatic actuation. The all-human-power constraint is what made it interesting:
-      every pound of design load had to be answered with leverage, counterweight or
-      mechanical advantage rather than horsepower.</p>
+      <p class="overview">A stage illusion, engineered. In <em>A Christmas Carol</em>, the
+      script calls for the Ghost of Christmas Past to levitate out of a large cabinet and
+      drift toward Scrooge. Our client — Prof. Rob Mark Morgan, a set designer — needed that
+      to actually happen on a stage: the armoire doors swing open by themselves, the
+      performer floats forward out of the cabinet and descends to the floor, and the doors
+      close behind her. No motors, no pneumatics, nothing the audience can see. Every motion
+      is driven by stagehands hidden behind the cabinet through cords, torsion springs and
+      linkages.</p>
+      <p class="overview">That constraint is what turned a carpentry job into an engineering
+      one: a 200–250 lb design load carrying a live performer, moved smoothly and repeatably,
+      show after show, on nothing but human effort routed through mechanical advantage.</p>
 
       <ul class="metrics">
         <li><b>~207 lbf</b><span>peak platform force</span></li>
+        <li><b>58 / 97 lbf</b><span>door open / close</span></li>
         <li><b>16-line</b><span>bill of materials</span></li>
         <li><b>4 sheets</b><span>released drawings</span></li>
-        <li><b>12 specs</b><span>from 13 weighted needs</span></li>
+        <li><b>2–3</b><span>stagehands required</span></li>
+      </ul>
+
+      <div class="grid tech">
+        <figure>
+          <img src="images/gasp-render-open.jpg" alt="Rendered armoire with doors open, annotated with the torsion spring and door cord mechanism">
+          <figcaption>Doors open. Torsion springs at the hinges supply the opening torque; a stagehand releases cords attached to the door eyebolts to let them swing.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gasp-render-extended.jpg" alt="Rendered armoire with the performer platform translated forward on its sliding track">
+          <figcaption>Platform extended. A stagehand pushes the push bar to slide the platform forward on rails while a three-bar linkage holds it elevated.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gasp-render-lowered.jpg" alt="Rendered armoire with the platform lowered to the stage floor">
+          <figcaption>Lowered to the stage by paying out a cord that runs from the platform eyebolt up through a ceiling eyebolt to the stagehand.</figcaption>
+        </figure>
+      </div>
+
+      <h4>How the illusion works</h4>
+      <ul class="pts">
+        <li><strong>Doors.</strong> Torsion springs at the hinges drive the doors open; cords
+        threaded through eyebolts on each door and released by a stagehand control the rate,
+        so both doors open together and rest against a doorstop. Retracting the same cords
+        closes them.</li>
+        <li><strong>Translation.</strong> The performer's platform rides on linear slides and
+        is pushed forward out of the cabinet on a push bar, with built-in bump stops keeping
+        the rails from overrunning their track.</li>
+        <li><strong>Descent.</strong> A three-bar linkage lifts the platform clear of its
+        support; a cord running from the platform eyebolt up through a ceiling eyebolt to a
+        stagehand then lowers the actor to the stage under control.</li>
+        <li><strong>Concealment.</strong> A fog machine and dark staging hide the mechanism
+        and the stagehands, which is what lets the whole thing read as levitation.</li>
       </ul>
 
       <h4>Design process</h4>
       <ul class="pts">
-        <li>Conducted a formal stakeholder interview to gather functional requirements,
-        benchmarked comparable devices and patents, and researched applicable safety
-        standards (IEC 60825-1, IEC 62133-2) to set the design envelope.</li>
+        <li>Interviewed the set designer for ~45 minutes to pull functional requirements from
+        the script and the staging, then benchmarked comparable devices and patents.</li>
         <li>Defined 13 weighted customer needs and translated them into 12 quantitative
-        target specifications — load capacity ≥200–250 lb, actuation cycle 6–10 s, door
-        opening angle >135–150°, operator hand force &lt;10–15 lbf, foot force &lt;40–75 lbf,
-        material cost &lt;$300–500, fabrication time &lt;15–30 hours.</li>
+        target specifications — platform capacity ≥200–250 lb, door opening 6–10 s, opened
+        door angle ≥135–150°, operator hand force &lt;10–15 lb, foot force &lt;40–75 lb,
+        performer-to-pinch-point clearance ≥8–16 in, cost &lt;$300–500, fabrication
+        ≤15–30 hours.</li>
         <li>Built a function-tree decomposition and morphological chart, then developed and
-        formally evaluated four concepts — counterweighted cantilever, overhead
-        cable-and-pulley crane, vertically translating platform, and four-bar self-driving
-        linkage — through a weighted decision matrix before committing.</li>
+        formally evaluated four concepts — Rolling Lever (counterweighted cantilever), Crane
+        (overhead cable and pulley), Vanishing Platform (translating platform) and
+        Self-Driving Linkage (four-bar) — through a weighted decision matrix before
+        committing.</li>
       </ul>
+
+      <div class="grid tech">
+        <figure>
+          <img src="images/gasp-drawing-closed.jpg" alt="Released drawing sheet showing the armoire with doors closed">
+          <figcaption>Sheet 1 — doors closed.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gasp-drawing-open.jpg" alt="Released drawing sheet showing the armoire with doors open">
+          <figcaption>Sheet 2 — doors open.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gasp-drawing-extended.jpg" alt="Released drawing sheet showing the platform extended forward">
+          <figcaption>Sheet 3 — platform extended.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gasp-drawing-lowered.jpg" alt="Released drawing sheet showing the platform lowered to the stage">
+          <figcaption>Sheet 4 — lowered to the stage.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gasp-bom.jpg" alt="Assembly drawing with the 16-line bill of materials">
+          <figcaption>Assembly drawing and 16-line bill of materials.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gasp-components.jpg" alt="Labeled interior view identifying the platform, push bar, platform support and cable eye-hooks">
+          <figcaption>Key components, labeled for the operator's manual.</figcaption>
+        </figure>
+      </div>
 
       <h4>Analysis &amp; verification</h4>
       <ul class="pts">
@@ -206,26 +290,43 @@
         rotational inertia, and a continuously varying hinge moment arm.</li>
         <li>Verified support beam adequacy through beam deflection analysis (δ = FL³/3EI) and
         estimated required actuation force through static friction and coefficient analysis.</li>
-        <li>Quantified actuation loads in SolidWorks Motion multibody dynamic simulation with
-        friction modeled at rail and linkage interfaces — ~207 lbf peak platform force, door
-        forces peaking at 58 lbf opening and 97 lbf closing, manageable with body-weight-assisted
-        leverage, while platform loads drove a 2–3 person operator staffing requirement.</li>
-        <li>Cross-checked simulation output against hand calculations in a documented
-        sanity-check section rather than accepting the solver result.</li>
+        <li>Quantified actuation loads in SolidWorks Motion, modeling friction at the rail and
+        track system and at the three-bar linkage — ~207 lbf peak to extend the platform,
+        which is what drove the 2–3 stagehand staffing requirement.</li>
+        <li>Stated the limits of the model rather than burying them: friction at the cords and
+        eyebolts was not modeled, and the analysis was quasi-static, so both the door-closing
+        overstatement and the door-opening understatement were identified and explained per
+        mechanism.</li>
       </ul>
+
+      <div class="grid tech">
+        <figure>
+          <img src="images/gasp-motion-force.jpg" alt="Plot of force magnitude required to extend the platform, peaking above 200 lb">
+          <figcaption>SolidWorks Motion: force to extend the platform, peaking at ~207 lb.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gasp-door-open-force.jpg" alt="Plot of door opening force against time, highest at the closed position">
+          <figcaption>Door opening force — highest at the closed position, where the torsion springs are wound.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/gasp-door-close-force.jpg" alt="Plot of door closing force against time, rising toward the closed position">
+          <figcaption>Door closing force, rising to ~97 lb as the springs are re-wound.</figcaption>
+        </figure>
+      </div>
 
       <h4>Deliverables</h4>
       <ul class="pts">
         <li>Released a complete SolidWorks assembly with a 16-line bill of materials and four
-        detailed drawing sheets covering closed, open, extended and lowered states.</li>
-        <li>Authored a technical design report and a standalone operator's manual with
-        itemized safety warnings written for non-engineer end users.</li>
+        drawing sheets covering the closed, open, extended and lowered states.</li>
+        <li>Authored a technical design report and a standalone operator's manual — a
+        six-step procedure with itemized warnings, written for stagehands rather than
+        engineers.</li>
       </ul>
 
       <ul class="tools">
         <li>SolidWorks</li><li>SolidWorks Motion</li><li>Requirements engineering</li>
         <li>Free-body analysis</li><li>Beam deflection</li><li>Linkage kinematics</li>
-        <li>Drawing release</li>
+        <li>Drawing release</li><li>Operator documentation</li>
       </ul>
     </article>
 
@@ -288,46 +389,87 @@
     <article>
       <h3>AF16 Engine — Finite Element Heat Transfer Analysis</h3>
       <p class="meta">MEMS 3420 Heat Transfer · Simulation project · Spring 2026</p>
-      <p class="overview">A finite element study of the steady-state thermal performance of a
-      finned engine cylinder assembly based on a Honda AF16-style small engine. The goal was
-      not to produce a temperature field but to prove the temperature field could be trusted:
-      mesh independence established first, then a benchmark against the manufacturer's own
+      <p class="overview">The Honda AF16 50cc is an air-cooled engine: it has no radiator and
+      no coolant, so the fins cast into the cylinder are the entire thermal management system.
+      If they underperform, the engine seizes. This study modeled the finned cylinder in
+      COMSOL to find out whether they were sized correctly — but the real work was proving the
+      answer could be trusted. Mesh independence first, then a benchmark against Honda's own
       service data, then a physical explanation for the gap between the two.</p>
 
       <ul class="metrics">
         <li><b>~374 K</b><span>simulated base temp</span></li>
         <li><b>490 K</b><span>manufacturer critical limit</span></li>
-        <li><b>5 levels</b><span>mesh convergence study</span></li>
+        <li><b>20.7</b><span>fin effectiveness</span></li>
+        <li><b>98.7%</b><span>fin efficiency</span></li>
         <li><b>8,556.5 mm²</b><span>fin area, derived by hand</span></li>
       </ul>
 
+      <div class="grid tech">
+        <figure>
+          <img src="images/comsol-temp-field.jpg" alt="COMSOL volumetric temperature field across the finned cylinder section">
+          <figcaption>Steady-state temperature field. Hottest at the combustion chamber bore, coolest at the fin corners furthest from it.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/comsol-mesh.jpg" alt="Physics-controlled tetrahedral mesh of the cylinder and fin geometry">
+          <figcaption>Physics-controlled mesh — uniform, since the geometry has no regions of extreme complexity.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/comsol-cad.jpg" alt="Isometric CAD view of the symmetric half-model of the finned cylinder">
+          <figcaption>Symmetric half-model: three 4 mm fins, 10 mm apart, about a 19.25 mm cylindrical cutout.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/comsol-cutlines.jpg" alt="Temperature against arc length along three cut-lines through the fin">
+          <figcaption>Temperature along three cut-lines — horizontal, vertical and corner-to-corner — characterizing the gradient through the fin.</figcaption>
+        </figure>
+      </div>
+
       <h4>Modeling approach</h4>
       <ul class="pts">
-        <li>Modeled a symmetric CAD geometry of the cylinder section, exploiting symmetry to
-        reduce solve cost without losing the gradients of interest.</li>
-        <li>Derived an analytical fin surface area of 8,556.5 mm² by hand to support
-        downstream effectiveness and efficiency calculations and to provide an independent
-        check on the model.</li>
-        <li>Generated a physics-controlled mesh in COMSOL Multiphysics and solved the 3D
-        steady-state conductive and convective field.</li>
+        <li>Modeled a symmetric CAD geometry of the cylinder section, exploiting symmetry
+        about the cylindrical cutout to halve solve cost without losing the gradients of
+        interest.</li>
+        <li>Derived an analytical fin surface area of 8,556.5 mm² by hand — both to support the
+        effectiveness and efficiency calculations and to give an independent check on the
+        model.</li>
+        <li>Assigned aluminum properties throughout (2,680 kg/m³, 150 W/m·K, 930 J/kg·K),
+        solved the 3D steady-state conductive and convective field with quadratic Lagrange
+        elements, and treated free convection off the fins as a boundary condition rather than
+        meshing the surrounding air.</li>
       </ul>
 
       <h4>Verification &amp; validation</h4>
       <ul class="pts">
-        <li>Executed a formal mesh convergence study across five refinement levels to confirm
-        the solution was independent of discretization before any result was reported.</li>
-        <li>Benchmarked the simulated base temperature (~374 K) against Honda service manual
-        values of 460 K rated and 490 K critical, confirming safe thermal margin.</li>
-        <li>Justified the discrepancy physically rather than dismissing it, attributing the
-        delta to static simulation conditions versus dynamic loaded operation.</li>
-        <li>Extracted temperature profiles along three characteristic cut-lines to
-        characterize spatial gradients through the fin stack, and computed the average
-        convective heat transfer coefficient, fin effectiveness and fin efficiency.</li>
+        <li>Ran a formal mesh convergence study across five refinement levels before reporting
+        any result — maximum temperature moved less than 0.27% between the coarsest and finest
+        mesh, and was flat at 374 K from Fine onward.</li>
+        <li>Benchmarked the simulated base temperature against Honda service manual values of
+        460 K average operating and 490 K critical, confirming a safe thermal margin.</li>
+        <li>Justified the discrepancy physically rather than dismissing it: the model is
+        static and unloaded, where the published figures come from an engine under load and
+        propelling a vehicle. A transient study under forced convection would close the gap.</li>
+        <li>Computed the average convective heat transfer coefficient and derived a fin
+        effectiveness of 20.7 — well above the threshold of 2 at which fins are considered
+        worth adding — and a fin efficiency of 98.7%.</li>
       </ul>
+
+      <div class="tw">
+        <table>
+          <caption>Mesh convergence — maximum temperature against element count.</caption>
+          <thead><tr><th>Mesh</th><th>Elements</th><th>Max temperature</th></tr></thead>
+          <tbody>
+            <tr><td>Coarse</td><td>1,573</td><td>375 K</td></tr>
+            <tr><td>Normal</td><td>2,283</td><td>375 K</td></tr>
+            <tr><td>Fine</td><td>5,433</td><td>374 K</td></tr>
+            <tr><td>Extra fine</td><td>44,787</td><td>374 K</td></tr>
+            <tr class="best"><td>Extremely fine</td><td>96,089</td><td>374 K</td></tr>
+          </tbody>
+        </table>
+      </div>
 
       <ul class="tools">
         <li>COMSOL Multiphysics</li><li>Finite element analysis</li><li>Mesh convergence</li>
-        <li>Conduction &amp; convection</li><li>Verification &amp; validation</li>
+        <li>Conduction &amp; convection</li><li>Fin effectiveness &amp; efficiency</li>
+        <li>Verification &amp; validation</li>
       </ul>
     </article>
 
@@ -346,8 +488,20 @@
         <li><b>~1,051 kW</b><span>peak cooling load</span></li>
         <li><b>53.1%</b><span>from solar gain</span></li>
         <li><b>COP 4.87</b><span>recommended refrigerant</span></li>
+        <li><b>110.9 kg/s</b><span>air mass flow</span></li>
         <li><b>5</b><span>working fluids compared</span></li>
       </ul>
+
+      <div class="grid tech">
+        <figure>
+          <img src="images/hvac-cycle-schematic.jpg" alt="Schematic of the reverse Rankine refrigeration cycle with compressor, condenser, expansion valve and evaporator">
+          <figcaption>Reverse Rankine cycle: compressor, condenser, expansion valve, evaporator.</figcaption>
+        </figure>
+        <figure>
+          <img src="images/hvac-cycle-ts.jpg" alt="Temperature-entropy diagram of the four-state refrigeration cycle overlaid on the vapor dome">
+          <figcaption>T–s diagram of the four-state cycle, with the isentropic and actual compression paths (2s vs. 2).</figcaption>
+        </figure>
+      </div>
 
       <h4>Modeling approach</h4>
       <ul class="pts">
@@ -379,6 +533,43 @@
         refrigerant global warming potential, rising market costs and supply shortages,
         tightening EPA leak-repair thresholds and emerging low-refrigerant technologies.</li>
       </ul>
+
+      <div class="tw">
+        <table>
+          <caption>Refrigerant comparison under identical boundary conditions. R1233zd(E) wins on both axes.</caption>
+          <thead><tr><th>Refrigerant</th><th>Mass flow (kg/s)</th><th>Compressor power (kW)</th><th>COP</th></tr></thead>
+          <tbody>
+            <tr><td>R134a</td><td>7.5525</td><td>230.68</td><td>4.56</td></tr>
+            <tr><td>R410A</td><td>7.1200</td><td>251.87</td><td>4.17</td></tr>
+            <tr><td>R407C</td><td>7.2824</td><td>278.41</td><td>3.78</td></tr>
+            <tr><td>R1234ze(E)</td><td>8.2664</td><td>231.75</td><td>4.54</td></tr>
+            <tr class="best"><td>R1233zd(E)</td><td>6.8092</td><td>215.84</td><td>4.87</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>The solver</h4>
+      <p class="overview">Each candidate fluid is pushed through the same four state points
+      from CoolProp, so no result depends on a published table that might have been generated
+      under different assumptions:</p>
+<pre><span class="c"># Refrigerant Loop</span>
+fluids = [ "R134a", "R410A", "R407C", "R1234ze(E)", "R1233zd(E)" ]
+
+for fluid in fluids:
+    h3 = PropsSI('H', 'T', t_high_K, 'Q', 0, fluid)
+    h4 = h3
+    h1 = PropsSI('H', 'T', t_low_K,  'Q', 1, fluid)
+    s1 = PropsSI('S', 'T', t_low_K,  'Q', 1, fluid)
+
+    P_low  = PropsSI('P', 'T', t_low_K,  'Q', 1, fluid)
+    P_high = PropsSI('P', 'T', t_high_K, 'Q', 0, fluid)
+    h2s    = PropsSI('H', 'P', P_high, 'S', s1, fluid)
+    h2     = h1 + (h2s - h1) / eta_comp
+
+    m_fluid = q_load / (h1 - h4)
+    w_comp  = m_fluid * (h2 - h1)
+    cop     = q_load / w_comp
+</pre>
 
       <ul class="tools">
         <li>Python</li><li>CoolProp</li><li>Vapor-compression cycle</li>
