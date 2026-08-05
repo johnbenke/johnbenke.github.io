@@ -44,6 +44,11 @@ visual on teardown? Naming the test turns a claim into a method.
 **Hours logged on the two bikes?** The Cutlass has 100+ documented hours and
 that number carries weight on the page.
 
+**Was the riding photo taken before or after the rebuild?** It now leads the
+motorcycles page with a deliberately neutral caption ("The XR200 under power").
+If it is post-rebuild, the caption should say so — that turns a nice photo into
+evidence the work succeeded.
+
 **The Arduino sketch.** The HVAC project now shows real code on the site and it
 lifts that section; the alarm clock has no code and no photo, so it is the
 weakest entry on the page. Even the alarm-check loop would help.
@@ -53,9 +58,23 @@ home page use a typographic tile instead of a photo. In priority order:
 
 | Card | What would fill it |
 |---|---|
+| Alarm Clock | The breadboard/LCD photo — it exists, it just has not reached the repo yet |
 | Foosball (MEMS 202) | One drawing sheet with GD&T callouts legible, or the 22-component assembly render |
 | Machine Shop (MEMS 1001) | The six parts laid out on a plain surface, one overhead shot |
-| Alarm Clock | The finished clock, or the breadboard wiring |
+
+**Getting images in.** Pasting a photo into chat does not put a file on disk —
+only documents do. Two routes that work: wrap the photos in a PDF or Word doc
+and send that (this is how `moto-riding.jpg` arrived), or upload straight to
+`images/` through the GitHub web UI. iCloud share links are blocked by the
+sandbox proxy and cannot be fetched.
+
+**Wainwright Building photo — provenance unconfirmed.** A photo was supplied
+for the HVAC project but is being held out of the repo pending an answer. At
+386x518 it is web-thumbnail size rather than phone-camera size, which suggests
+it was downloaded rather than taken. The building photo in the MEMS 3430 report
+was excluded for the same reason. If John took it, it goes straight in; if not,
+Wikimedia Commons has freely licensed photographs of the Wainwright that can be
+used with attribution.
 
 The typographic tiles look deliberate rather than broken, so there is no rush —
 but a photo beats a number on a card every time. Drop the file in `images/`,
