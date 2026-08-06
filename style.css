@@ -1,27 +1,27 @@
 
   :root{
-    --bg:#f2ece0; --panel:#fffdf9; --ink:#191512; --muted:#6b6156;
-    --line:#d6cab5; --rule:#191512;
-    --accent:#b0281a;        /* muscle red   */
-    --blue:#154a72;          /* petrol blue  */
-    --gold:#c7982e;          /* coach line   */
-    --accent-soft:#f6e7dd;
+    --bg:#eceff6; --panel:#fbfcfe; --ink:#13161f; --muted:#5a6274;
+    --line:#c9d0e0; --rule:#13161f;
+    --accent:#1d3cb0;        /* pinstripe blue  */
+    --blue:#6b3fd0;          /* violet          */
+    --gold:#8fa4e0;          /* ice hairline    */
+    --accent-soft:#e2e7f6;
     --serif:Georgia,"Iowan Old Style","Palatino Linotype",serif;
     --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Courier New",monospace;
     --sans:"Helvetica Neue",Helvetica,Arial,sans-serif;
   }
   @media (prefers-color-scheme:dark){
     :root{
-      --bg:#131110; --panel:#1c1917; --ink:#f0eae0; --muted:#9b9186;
-      --line:#332e28; --rule:#f0eae0;
-      --accent:#d9482c; --blue:#4f92c4; --gold:#d9b054; --accent-soft:#2a1a15;
+      --bg:#0e1017; --panel:#161923; --ink:#e7eaf4; --muted:#919ab0;
+      --line:#282e3d; --rule:#e7eaf4;
+      --accent:#6f8cff; --blue:#a880ff; --gold:#5470b8; --accent-soft:#191e2e;
     }
   }
   /* A hand-laid coach line: heavy stroke over a gold hairline. */
   .pin, h2::after, .hero::before, footer::before, .nextprev::before, .card::before{
     background:
       linear-gradient(var(--accent),var(--accent)) 0 0/100% 5px no-repeat,
-      linear-gradient(var(--gold),var(--gold))     0 7px/100% 2px no-repeat,
+      linear-gradient(var(--blue),var(--blue))     0 7px/100% 2px no-repeat,
       linear-gradient(var(--accent),var(--accent)) 0 11px/100% 1.5px no-repeat;
   }
   *{box-sizing:border-box}
@@ -33,10 +33,10 @@
   }
   /* Paper grain. Fixed overlay so it never scrolls against the content. */
   body::before{
-    content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.22;
+    content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.14;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
   }
-  @media (prefers-color-scheme:dark){ body::before{opacity:.16} }
+  @media (prefers-color-scheme:dark){ body::before{opacity:.12} }
   .wrap{position:relative; z-index:1}
   .wrap{max-width:940px; margin:0 auto; padding:0 24px}
   a{color:var(--accent)}
@@ -210,9 +210,9 @@
   .card::before{content:""; position:absolute; left:0; right:0; top:0; height:13px; z-index:3}
   .card:hover::before,.card:focus-visible::before{
     background:
-      linear-gradient(var(--blue),var(--blue)) 0 0/100% 5px no-repeat,
-      linear-gradient(var(--gold),var(--gold)) 0 7px/100% 2px no-repeat,
-      linear-gradient(var(--blue),var(--blue)) 0 11px/100% 1.5px no-repeat;
+      linear-gradient(var(--blue),var(--blue))     0 0/100% 5px no-repeat,
+      linear-gradient(var(--accent),var(--accent)) 0 7px/100% 2px no-repeat,
+      linear-gradient(var(--blue),var(--blue))     0 11px/100% 1.5px no-repeat;
   }
   .card .more{margin-top:auto; padding-top:13px; font-family:var(--sans); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); font-weight:800}
 

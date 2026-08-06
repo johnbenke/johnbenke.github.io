@@ -128,8 +128,9 @@ silently. Check the page after adding one.
 
 ## Theme
 
-Muscle car, not drafting office. Bone paint, muscle red, petrol blue and a gold
-coach line, with hand-laid pinstriping as the organising motif.
+Muscle car, not drafting office — in a cool key. Cool off-white ground with a
+faint blue lean, pinstripe blue, violet, and an ice hairline, with hand-laid
+pinstriping as the organising motif.
 
 - **Pinstripes.** A triple coach line — heavy stroke, gold hairline, closing
   hairline — drawn in pure CSS gradients. It divides the masthead, runs under
@@ -137,13 +138,14 @@ coach line, with hand-laid pinstriping as the organising motif.
   footer and prev/next rail. Cards flip their stripe from red to blue on hover.
 - **Badge type.** The name is heavy italic uppercase, like body-side badging.
   Project titles are tight bold sans; every label is letterspaced uppercase.
-- **Colour has jobs.** Red carries section headings, "read more" and odd-numbered
-  metric tiles; blue carries kickers, skill labels, table headers and tool chips;
-  gold is only ever the hairline and the caption rule.
+- **Colour has jobs.** Blue carries section headings, "read more" and
+  odd-numbered metric tiles; violet carries kickers, skill labels, table headers
+  and tool chips; the ice tone is only ever a caption rule. Stripes read
+  blue-dominant with violet as the inner line, and invert on hover.
 - **Chrome trim.** 2px ink borders on cards, figures, tables and code blocks —
-  which in dark mode invert to cream and read as brightwork.
-- The paper grain from the earlier theme survives at ~22%, just enough to keep
-  the background from looking flat.
+  which in dark mode invert to near-white and read as brightwork.
+- The grain from the earlier theme survives at ~14% — lower than on the warm
+  ground, where it read as noise rather than texture.
 
 The earlier drafting-manual treatment (title blocks, sheet numbers, plate tabs,
 typewriter labels) was removed — see git history if it is ever wanted back.
