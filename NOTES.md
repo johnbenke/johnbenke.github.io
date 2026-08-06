@@ -128,29 +128,26 @@ silently. Check the page after adding one.
 
 ## Theme
 
-Warm manila paper, oxide-red accent, serif headings, monospace for every label
-and readout — a drawing set from a 1960s service manual, chosen to suit the
-restoration work that leads the page.
+Muscle car, not drafting office. Bone paint, muscle red, petrol blue and a gold
+coach line, with hand-laid pinstriping as the organising motif.
 
-- **Title blocks.** Every page opens with a bordered field strip like a drawing
-  sheet: the home page carries Discipline / Institution / Graduating / Sheet 00,
-  and each project carries Sheet nn of 08 / Context / Type / Term. On the
-  project pages this replaces the old plain meta line.
-- **Plate tabs.** Each card wears a "PLATE 01" tab, numbered by CSS counter from
-  the grid order — reorder the cards and they renumber themselves.
-- **Paper grain.** A fixed SVG turbulence overlay on `body::before`, ~5% in
-  light and lower in dark. No image file, no request.
-- **Rules.** Double rules under section headings, title blocks, the footer and
-  the prev/next rail, in a dedicated `--rule` colour darker than `--line`.
-- **Squared corners and 1.5px borders** throughout, plus an accent left edge on
-  metric tiles and code blocks, so panels read as printed plates.
+- **Pinstripes.** A triple coach line — heavy stroke, gold hairline, closing
+  hairline — drawn in pure CSS gradients. It divides the masthead, runs under
+  every section heading, sits across the top edge of every card, and closes the
+  footer and prev/next rail. Cards flip their stripe from red to blue on hover.
+- **Badge type.** The name is heavy italic uppercase, like body-side badging.
+  Project titles are tight bold sans; every label is letterspaced uppercase.
+- **Colour has jobs.** Red carries section headings, "read more" and odd-numbered
+  metric tiles; blue carries kickers, skill labels, table headers and tool chips;
+  gold is only ever the hairline and the caption rule.
+- **Chrome trim.** 2px ink borders on cards, figures, tables and code blocks —
+  which in dark mode invert to cream and read as brightwork.
+- The paper grain from the earlier theme survives at ~22%, just enough to keep
+  the background from looking flat.
 
-Sheet numbers are written into each project page's HTML, so **reordering the
-cards means renumbering the title blocks by hand** — the plate tabs update
-themselves, the sheet numbers do not.
+The earlier drafting-manual treatment (title blocks, sheet numbers, plate tabs,
+typewriter labels) was removed — see git history if it is ever wanted back.
 
-All of it lives in the `:root` variables at the top of `style.css` — change
-`--bg`, `--ink`, `--accent` and the two font stacks and the whole site follows.
 
 ## Structure
 
