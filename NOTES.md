@@ -128,41 +128,26 @@ silently. Check the page after adding one.
 
 ## Theme
 
-Muscle car, not drafting office — in a cool key. Cool white ground (#f2f6fd,
-a white with a blue cast) against pure white cards, pinstripe blue and violet,
-with hand-laid pinstriping as the organising motif. The two whites are the
-point: the ground reads cool, the panels read clean, and the difference is what
-separates a card from the page now that the borders are hairlines.
+Cool white ground (#f2f6fd, a white with a blue cast) against pure white cards.
+The two whites do structural work: with borders reduced to hairlines, that
+difference is what separates a card from the page.
 
-- **Angular striping.** Mirrored chevron wings with mitred elbows needling out
-  to their tips, over a stack of three nested centre chevrons and a spearhead.
-  Sits under the masthead, above the footer and beneath every project title.
-  Drawn as filled SVG paths whose width runs start→peak→point — a stroked path
-  has one width along its length and can never come to a point. Two files,
-  `flourish-light.svg` and `flourish-dark.svg`, identical geometry with a
-  palette for each ground. Regenerate from the polyline table in the generator
-  (git history for this commit) rather than hand-editing path data.
-  The art is 1200×210, so any box holding it needs `height = width × 210/1200`
-  or the tips clip.
-- **Plain rules are single lines.** One blue hairline, nothing stacked: under
+- **One blue line, everywhere.** No ornament. A single blue hairline under
   section headings, trailing subsection labels, across the top and foot of every
-  card, down the page flanks, and on the left edge of metric tiles, code blocks
-  and captions. Cards turn theirs violet on hover. The scrollwork carries the
-  decoration; everything else stays out of its way.
+  card, on the masthead and footer dividers, and on the left edge of metric
+  tiles, code blocks, captions and table headers. Cards turn theirs violet on
+  hover.
+- **Badge type.** The name is heavy italic uppercase; project titles are tight
+  bold sans; every label is letterspaced uppercase.
+- **Colour with a job.** Blue for section headings and calls to action, violet
+  for kickers, skill labels, table headers and tool chips.
+- **Chrome trim.** 2px ink borders on cards, figures, tables and code blocks,
+  inverting to near-white in dark mode.
+- Grain is off in light mode and kept at ~13% in dark.
 
-- **Badge type.** The name is heavy italic uppercase, like body-side badging.
-  Project titles are tight bold sans; every label is letterspaced uppercase.
-- **Colour has jobs.** Blue carries section headings, "read more" and
-  odd-numbered metric tiles; violet carries kickers, skill labels, table headers
-  and tool chips; the ice tone is only ever a caption rule. Stripes read
-  blue-dominant with violet as the inner line, and invert on hover.
-- **Chrome trim.** 2px ink borders on cards, figures, tables and code blocks —
-  which in dark mode invert to near-white and read as brightwork.
-- Grain is off in light mode (on pure white it reads as dirt) and kept at ~13%
-  in dark, where it stops the background looking flat.
-
-The earlier drafting-manual treatment (title blocks, sheet numbers, plate tabs,
-typewriter labels) was removed — see git history if it is ever wanted back.
+Decorative pinstriping — the SVG scrollwork and chevron flourishes, and the
+fixed body-side stripes — was built and then removed at John's request. Git
+history has both generators (search for `flourish`) if it is ever wanted back.
 
 
 ## Structure
