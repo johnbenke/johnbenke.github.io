@@ -236,3 +236,87 @@
   .nextprev::before{content:""; position:absolute; left:0; right:0; top:0; height:13px}
   .nextprev a{text-decoration:none; font-family:var(--sans); font-size:12px; letter-spacing:.12em; text-transform:uppercase; font-weight:800}
   .nextprev span{color:var(--muted)}
+
+  /* ================= additional pinstriping ================= */
+
+  /* Body-side coach lines running the full height of the page, like the
+     stripes down the flanks of a car. Hidden on narrow screens. */
+  .sidepin{
+    position:fixed; top:0; bottom:0; width:13px; z-index:4; pointer-events:none;
+    background:
+      linear-gradient(var(--accent),var(--accent)) 0 0/5px 100% no-repeat,
+      linear-gradient(var(--blue),var(--blue))     7px 0/2px 100% no-repeat,
+      linear-gradient(var(--accent),var(--accent)) 11px 0/1.5px 100% no-repeat;
+    opacity:.9;
+  }
+  .sidepin.l{left:18px}
+  .sidepin.r{right:18px; transform:scaleX(-1)}
+  @media (max-width:1080px){ .sidepin{display:none} }
+
+  /* Every subsection label trails a coach line out to the margin. */
+  h4{display:flex; align-items:center; gap:14px}
+  h4::after{
+    content:""; flex:1; height:6px;
+    background:
+      linear-gradient(var(--accent),var(--accent)) 0 0/100% 2.5px no-repeat,
+      linear-gradient(var(--blue),var(--blue))     0 4px/100% 1.5px no-repeat;
+  }
+
+  /* Cards get a closing line at the foot as well as the stripe up top. */
+  .card{padding-bottom:7px}
+  .card::after{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:7px;
+    background:
+      linear-gradient(var(--blue),var(--blue))     0 1.5px/100% 1.5px no-repeat,
+      linear-gradient(var(--accent),var(--accent)) 0 4px/100% 3px no-repeat;
+  }
+  .card:hover::after,.card:focus-visible::after{
+    background:
+      linear-gradient(var(--accent),var(--accent)) 0 1.5px/100% 1.5px no-repeat,
+      linear-gradient(var(--blue),var(--blue))     0 4px/100% 3px no-repeat;
+  }
+
+  /* Two-tone edge on readouts and code, instead of one flat bar. */
+  .metrics li{
+    border-left:0 !important;
+    padding-left:20px;
+    background-image:
+      linear-gradient(var(--accent),var(--accent)),
+      linear-gradient(var(--blue),var(--blue));
+    background-size:5px 100%, 2px 100%;
+    background-position:0 0, 7px 0;
+    background-repeat:no-repeat;
+  }
+  .metrics li:nth-child(even){
+    background-image:
+      linear-gradient(var(--blue),var(--blue)),
+      linear-gradient(var(--accent),var(--accent));
+  }
+  pre{
+    border-left:0; padding-left:26px;
+    background-image:
+      linear-gradient(var(--accent),var(--accent)),
+      linear-gradient(var(--blue),var(--blue));
+    background-size:5px 100%, 2px 100%;
+    background-position:0 0, 7px 0;
+    background-repeat:no-repeat;
+  }
+
+  /* Figure captions: the gold rule becomes a two-tone coach line. */
+  figcaption{
+    border-left:0; padding-left:13px;
+    background:
+      linear-gradient(var(--accent),var(--accent)) 0 0/3px 100% no-repeat,
+      linear-gradient(var(--blue),var(--blue))     5px 0/1.5px 100% no-repeat;
+  }
+
+  /* Table headers sit over a coach line rather than a plain rule. */
+  .tw table{border-collapse:separate; border-spacing:0}
+  thead tr{border-bottom:0}
+  thead th{
+    padding-bottom:13px;
+    background:
+      linear-gradient(var(--accent),var(--accent)) 0 100%/100% 3px no-repeat,
+      linear-gradient(var(--blue),var(--blue))     0 calc(100% - 5px)/100% 1.5px no-repeat;
+  }
+  tbody td{border-bottom:1px solid var(--line)}

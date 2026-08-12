@@ -132,10 +132,14 @@ Muscle car, not drafting office — in a cool key. Cool off-white ground with a
 faint blue lean, pinstripe blue, violet, and an ice hairline, with hand-laid
 pinstriping as the organising motif.
 
-- **Pinstripes.** A triple coach line — heavy stroke, gold hairline, closing
-  hairline — drawn in pure CSS gradients. It divides the masthead, runs under
-  every section heading, sits across the top edge of every card, and closes the
-  footer and prev/next rail. Cards flip their stripe from red to blue on hover.
+- **Pinstripes.** A triple coach line — heavy stroke, contrast hairline, closing
+  hairline — drawn in pure CSS gradients, no images. It appears on:
+  the masthead divider; under every section heading; across the top *and* foot
+  of every card; down both flanks of the page as fixed body-side stripes
+  (`.sidepin`, hidden below 1080px where there is no room); trailing out to the
+  margin from every subsection label; the left edge of metric tiles, code blocks
+  and figure captions; under table headers; and closing the footer and
+  prev/next rail. Cards invert theirs blue↔violet on hover.
 - **Badge type.** The name is heavy italic uppercase, like body-side badging.
   Project titles are tight bold sans; every label is letterspaced uppercase.
 - **Colour has jobs.** Blue carries section headings, "read more" and
