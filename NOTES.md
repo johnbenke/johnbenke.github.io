@@ -139,14 +139,12 @@ and violet, with hand-laid pinstriping as the organising motif.
   and `flourish-dark.svg`, identical geometry with palettes for each ground.
   Regenerate them by editing the curve table in the generator (see git history
   for this commit) rather than hand-editing the path data.
-- **Pinstripes.** A triple coach line — heavy stroke, contrast hairline, closing
-  hairline — drawn in pure CSS gradients, no images. It appears on:
-  the masthead divider; under every section heading; across the top *and* foot
-  of every card; down both flanks of the page as fixed body-side stripes
-  (`.sidepin`, hidden below 1080px where there is no room); trailing out to the
-  margin from every subsection label; the left edge of metric tiles, code blocks
-  and figure captions; under table headers; and closing the footer and
-  prev/next rail. Cards invert theirs blue↔violet on hover.
+- **Plain rules are single lines.** One blue hairline, nothing stacked: under
+  section headings, trailing subsection labels, across the top and foot of every
+  card, down the page flanks, and on the left edge of metric tiles, code blocks
+  and captions. Cards turn theirs violet on hover. The scrollwork carries the
+  decoration; everything else stays out of its way.
+
 - **Badge type.** The name is heavy italic uppercase, like body-side badging.
   Project titles are tight bold sans; every label is letterspaced uppercase.
 - **Colour has jobs.** Blue carries section headings, "read more" and
