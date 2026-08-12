@@ -84,9 +84,9 @@ crop to 3:2, name it `thumb-<slug>.jpg`, and swap the `<div class="stat">` in
 **Résumé PDF.** Not linked. Drop `resume.pdf` in the repo root and add it to the
 contact list in the masthead of `index.html`.
 
-**Phone number.** The résumé carries `(914) 574-7347`; it is deliberately *not*
-on the site, since a public page gets scraped in a way a PDF sent to one
-recruiter does not. Email and LinkedIn are there. Say the word and it goes on.
+**Phone number** is now on the site at John's request — `(914) 574-7347`, as a
+`tel:` link in the masthead. It is on a public page, so expect it to be scraped
+eventually; removing it later is one line in `index.html`.
 
 ---
 

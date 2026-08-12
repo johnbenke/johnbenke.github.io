@@ -47,7 +47,7 @@
     letter-spacing:-.028em; text-transform:uppercase; color:var(--ink);
   }
   .sub{font-size:clamp(17px,2.3vw,20px); color:var(--muted); margin:0 0 8px; max-width:36em}
-  .school{font-size:14px; color:var(--muted); margin:0 0 22px; letter-spacing:.01em}
+  .school{font-size:16px; color:var(--muted); margin:14px 0 20px; letter-spacing:.005em; max-width:44em}
   .contact{list-style:none; display:flex; flex-wrap:wrap; gap:9px 20px; padding:0; margin:0; font-size:15px}
   .contact a{text-decoration:none; border-bottom:1px solid color-mix(in srgb,var(--accent) 35%,transparent); padding-bottom:1px}
   .contact a:hover{border-bottom-color:var(--accent)}
