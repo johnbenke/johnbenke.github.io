@@ -18,7 +18,7 @@
     }
   }
   /* A hand-laid coach line: heavy stroke over a gold hairline. */
-  .pin, h2::after, .hero::before, footer::before, .nextprev::before, .card::before{
+  .pin, h2::after, .nextprev::before, .card::before{
     background:
       linear-gradient(var(--accent),var(--accent)) 0 0/100% 5px no-repeat,
       linear-gradient(var(--blue),var(--blue))     0 7px/100% 2px no-repeat,
@@ -236,6 +236,25 @@
   .nextprev::before{content:""; position:absolute; left:0; right:0; top:0; height:13px}
   .nextprev a{text-decoration:none; font-family:var(--sans); font-size:12px; letter-spacing:.12em; text-transform:uppercase; font-weight:800}
   .nextprev span{color:var(--muted)}
+
+  /* ================= hand-laid scrollwork ================= */
+  /* Tapered, mirrored pinstripe art — the same motif a striper would lay by
+     hand down the centre of a deck lid. Two files so the colours suit both
+     grounds; the shapes are identical. */
+  .masthead .hero::before, footer::before, .phead::after{
+    content:""; display:block; height:62px;
+    background:url("images/flourish-light.svg") center/min(780px,94%) auto no-repeat;
+  }
+  @media (prefers-color-scheme:dark){
+    .masthead .hero::before, footer::before, .phead::after{
+      background-image:url("images/flourish-dark.svg");
+    }
+  }
+  .masthead .hero::before{position:absolute; left:0; right:0; top:-8px}
+  .masthead .hero{padding-top:76px}
+  footer::before{position:absolute; left:0; right:0; top:-6px; height:62px}
+  footer{padding-top:74px}
+  .phead::after{margin:6px 0 -6px}
 
   /* ================= additional pinstriping ================= */
 

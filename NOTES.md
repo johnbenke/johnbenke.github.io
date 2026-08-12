@@ -131,6 +131,14 @@ silently. Check the page after adding one.
 Muscle car, not drafting office — in a cool key. White ground, pinstripe blue
 and violet, with hand-laid pinstriping as the organising motif.
 
+- **Scrollwork.** Hand-laid pinstripe art — mirrored, tapered strokes with
+  needle points, a centre spear and hooks that curl back on themselves — sits
+  under the masthead, above the footer and beneath every project title. Drawn
+  as filled SVG paths whose width runs start→peak→point, which is what gives a
+  stripe its taper; a plain stroke cannot do it. Two files, `flourish-light.svg`
+  and `flourish-dark.svg`, identical geometry with palettes for each ground.
+  Regenerate them by editing the curve table in the generator (see git history
+  for this commit) rather than hand-editing the path data.
 - **Pinstripes.** A triple coach line — heavy stroke, contrast hairline, closing
   hairline — drawn in pure CSS gradients, no images. It appears on:
   the masthead divider; under every section heading; across the top *and* foot
