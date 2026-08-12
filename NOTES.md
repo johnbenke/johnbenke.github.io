@@ -128,8 +128,11 @@ silently. Check the page after adding one.
 
 ## Theme
 
-Muscle car, not drafting office — in a cool key. White ground, pinstripe blue
-and violet, with hand-laid pinstriping as the organising motif.
+Muscle car, not drafting office — in a cool key. Cool white ground (#f2f6fd,
+a white with a blue cast) against pure white cards, pinstripe blue and violet,
+with hand-laid pinstriping as the organising motif. The two whites are the
+point: the ground reads cool, the panels read clean, and the difference is what
+separates a card from the page now that the borders are hairlines.
 
 - **Scrollwork.** Hand-laid pinstripe art — mirrored, tapered strokes with
   needle points, a centre spear and hooks that curl back on themselves — sits

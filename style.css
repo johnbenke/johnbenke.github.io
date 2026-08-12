@@ -1,11 +1,11 @@
 
   :root{
-    --bg:#ffffff; --panel:#ffffff; --ink:#13161f; --muted:#5a6274;
-    --line:#dde2ee; --rule:#13161f;
+    --bg:#f2f6fd; --panel:#ffffff; --ink:#12151e; --muted:#586074;
+    --line:#d4dcee; --rule:#12151e;
     --accent:#1d3cb0;        /* pinstripe blue  */
     --blue:#6b3fd0;          /* violet          */
     --gold:#8fa4e0;          /* ice hairline    */
-    --accent-soft:#eff2fc;
+    --accent-soft:#e6ecfb;
     --serif:Georgia,"Iowan Old Style","Palatino Linotype",serif;
     --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Courier New",monospace;
     --sans:"Helvetica Neue",Helvetica,Arial,sans-serif;
