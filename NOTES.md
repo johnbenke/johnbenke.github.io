@@ -128,9 +128,8 @@ silently. Check the page after adding one.
 
 ## Theme
 
-Muscle car, not drafting office — in a cool key. Cool off-white ground with a
-faint blue lean, pinstripe blue, violet, and an ice hairline, with hand-laid
-pinstriping as the organising motif.
+Muscle car, not drafting office — in a cool key. White ground, pinstripe blue
+and violet, with hand-laid pinstriping as the organising motif.
 
 - **Pinstripes.** A triple coach line — heavy stroke, contrast hairline, closing
   hairline — drawn in pure CSS gradients, no images. It appears on:
@@ -148,8 +147,8 @@ pinstriping as the organising motif.
   blue-dominant with violet as the inner line, and invert on hover.
 - **Chrome trim.** 2px ink borders on cards, figures, tables and code blocks —
   which in dark mode invert to near-white and read as brightwork.
-- The grain from the earlier theme survives at ~14% — lower than on the warm
-  ground, where it read as noise rather than texture.
+- Grain is off in light mode (on pure white it reads as dirt) and kept at ~13%
+  in dark, where it stops the background looking flat.
 
 The earlier drafting-manual treatment (title blocks, sheet numbers, plate tabs,
 typewriter labels) was removed — see git history if it is ever wanted back.
