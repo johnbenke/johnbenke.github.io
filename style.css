@@ -229,20 +229,27 @@
   /* Tapered, mirrored pinstripe art — the same motif a striper would lay by
      hand down the centre of a deck lid. Two files so the colours suit both
      grounds; the shapes are identical. */
+  /* Art is 1200x210, so the box height has to track the rendered width or the
+     tips get clipped: h = w * 210/1200. */
   .masthead .hero::before, footer::before, .phead::after{
-    content:""; display:block; height:62px;
-    background:url("images/flourish-light.svg") center/min(780px,94%) auto no-repeat;
+    content:""; display:block; height:102px;
+    background:url("images/flourish-light.svg") center/min(580px,88%) auto no-repeat;
+  }
+  .phead::after{height:77px; background-size:min(440px,72%) auto}
+  @media (max-width:660px){
+    .masthead .hero::before, footer::before{height:70px; background-size:92% auto}
+    .phead::after{height:58px; background-size:80% auto}
   }
   @media (prefers-color-scheme:dark){
     .masthead .hero::before, footer::before, .phead::after{
       background-image:url("images/flourish-dark.svg");
     }
   }
-  .masthead .hero::before{position:absolute; left:0; right:0; top:-8px}
-  .masthead .hero{padding-top:76px}
-  footer::before{position:absolute; left:0; right:0; top:-6px; height:62px}
-  footer{padding-top:74px}
-  .phead::after{margin:6px 0 -6px}
+  .masthead .hero::before{position:absolute; left:0; right:0; top:-14px}
+  .masthead .hero{padding-top:104px}
+  footer::before{position:absolute; left:0; right:0; top:-10px}
+  footer{padding-top:104px}
+  .phead::after{margin:2px 0 -10px}
 
   /* ================= additional pinstriping ================= */
 

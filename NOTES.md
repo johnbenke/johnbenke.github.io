@@ -134,14 +134,16 @@ with hand-laid pinstriping as the organising motif. The two whites are the
 point: the ground reads cool, the panels read clean, and the difference is what
 separates a card from the page now that the borders are hairlines.
 
-- **Scrollwork.** Hand-laid pinstripe art — mirrored, tapered strokes with
-  needle points, a centre spear and hooks that curl back on themselves — sits
-  under the masthead, above the footer and beneath every project title. Drawn
-  as filled SVG paths whose width runs start→peak→point, which is what gives a
-  stripe its taper; a plain stroke cannot do it. Two files, `flourish-light.svg`
-  and `flourish-dark.svg`, identical geometry with palettes for each ground.
-  Regenerate them by editing the curve table in the generator (see git history
-  for this commit) rather than hand-editing the path data.
+- **Angular striping.** Mirrored chevron wings with mitred elbows needling out
+  to their tips, over a stack of three nested centre chevrons and a spearhead.
+  Sits under the masthead, above the footer and beneath every project title.
+  Drawn as filled SVG paths whose width runs start→peak→point — a stroked path
+  has one width along its length and can never come to a point. Two files,
+  `flourish-light.svg` and `flourish-dark.svg`, identical geometry with a
+  palette for each ground. Regenerate from the polyline table in the generator
+  (git history for this commit) rather than hand-editing path data.
+  The art is 1200×210, so any box holding it needs `height = width × 210/1200`
+  or the tips clip.
 - **Plain rules are single lines.** One blue hairline, nothing stacked: under
   section headings, trailing subsection labels, across the top and foot of every
   card, down the page flanks, and on the left edge of metric tiles, code blocks
