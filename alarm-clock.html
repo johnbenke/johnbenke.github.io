@@ -21,21 +21,37 @@
   </header>
   <div class="pbody">
     <article class="last">
-      <p class="overview">A working alarm clock built end to end on an Arduino Uno platform:
-      multiple independent alarms, a user control interface and multiple audio outputs. I
-      owned the entire build — sourcing, circuit design, embedded programming and physical
-      assembly — which meant every integration problem between the hardware and the firmware
-      was mine to find and mine to fix.</p>
+      <p class="overview">A working alarm clock built end to end on an Arduino Uno, from parts
+      sourced online — a digital time display, three independently settable alarms, each with its
+      own soundtrack, and a set of buttons that make it usable without a manual. The point of the
+      exercise was to show how a company could put a working prototype together cheaply.</p>
 
-      <h4>Full ownership</h4>
+      <h4>What it does</h4>
       <ul class="pts">
-        <li>Designed, wired, programmed and assembled a functional alarm clock on an Arduino
-        Uno microcontroller platform.</li>
-        <li>Integrated multiple independent alarm functions, a user control interface and
-        multiple audio output speakers.</li>
-        <li>Owned component sourcing, circuit design, embedded software programming, and
-        physical assembly and integration.</li>
+        <li>Digital display for the time, driven off the Arduino Uno board.</li>
+        <li><strong>Three independent alarms</strong>, each of which can be set separately.</li>
+        <li><strong>Three different soundtracks</strong>, one per alarm. There is no audio file
+        here — each tune had to be written as a song in the Arduino code, note by note, and
+        played out through the speakers.</li>
+        <li>Multiple speakers, plus a button interface designed so the clock is easy to operate.</li>
+        <li>All of the wiring is packaged inside the box: off the Arduino board, out to the
+        speakers, the display and the buttons.</li>
       </ul>
+
+      <h4>My part</h4>
+      <ul class="pts">
+        <li>I built the clock physically — component sourcing, circuit layout, wiring and getting
+        it all to fit and function inside the enclosure.</li>
+        <li>I wrote a good portion of the code, including the songs and the button
+        programming.</li>
+      </ul>
+
+      <h4>What I took from it</h4>
+      <p class="overview">Composing an alarm tone in code is a strange way to discover that
+      firmware and hardware are the same problem — the speaker only sounds right if the timing in
+      software and the wiring on the board agree. Packaging it all inside the box afterwards was
+      its own constraint: everything has to fit, stay connected, and still be reachable by
+      someone pressing a button.</p>
 
       <ul class="tools">
         <li>Arduino Uno</li><li>Embedded programming</li><li>Circuit design</li>

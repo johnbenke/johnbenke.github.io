@@ -30,28 +30,26 @@ wooden armoire?" gets nothing, and that costs more than the line is worth.
 
 ## Still needed from John
 
-**Individual contribution on the three team projects.** Still the biggest gap.
-None of the three reports splits the work by author, so the site describes team
-output without naming John's part. The foosball entry does name it and reads
-noticeably stronger. Needed for:
-- **MEMS 3110 (GASP)** — team: Stephen Bell, John Benke, Eli Beauchamp. Whose were the drawing sheets, the Motion study, the linkage trigonometry, the operator's manual?
-- **MEMS 3420 (COMSOL)** — team: John Benke, Emmanuel Jenkins, Chloe Lippert, Nate Smith. The meshing, the analytical fin area, the validation write-up?
-- **MEMS 3430 (HVAC)** — team: John Benke, Danny Bruns, Anthen Primus, Susanna Yeh. The load calculation, the cycle model, the refrigerant study, the financial/environmental extension?
-
-**How were the worn piston rings confirmed?** Compression test, leak-down, or
-visual on teardown? Naming the test turns a claim into a method.
+**HVAC individual contribution** is the one gap left. John's account describes
+the team's process (measurements, shading coefficient, Python model, write-up)
+but does not say which parts were his. GASP, COMSOL, foosball and the alarm
+clock now all name his part.
 
 **Hours logged on the two bikes?** The Cutlass has 100+ documented hours and
 that number carries weight on the page.
+
+**"Rusty aunt"** in John's dictated notes was read as rust-inhibiting paint on
+the Cutlass floors and trunk. If he meant a specific product (Rust-Oleum, a rust
+converter, an encapsulator), name it — it is currently generic on the page.
 
 **Was the riding photo taken before or after the rebuild?** It now leads the
 motorcycles page with a deliberately neutral caption ("The XR200 under power").
 If it is post-rebuild, the caption should say so — that turns a nice photo into
 evidence the work succeeded.
 
-**The Arduino sketch.** The HVAC project now shows real code on the site and it
-lifts that section; the alarm clock has no code and no photo, so it is the
-weakest entry on the page. Even the alarm-check loop would help.
+**The Arduino sketch.** The alarm clock page is much stronger now that it
+describes the three alarms and the songs written note by note in code — but an
+excerpt of that song or button code would make it stronger still.
 
 **Photos still missing.** Three projects have no image, so their cards on the
 home page use a typographic tile instead of a photo. In priority order:
@@ -104,6 +102,21 @@ eventually; removing it later is one line in `index.html`.
 - **Mesh convergence numbers** — 1,573 → 96,089 elements, <0.27% variation.
 - **Full refrigerant comparison** — all five fluids with mass flow, compressor
   power and COP, now a table rather than one recommended value.
+
+## Answered by John's own account
+
+- **The COMSOL engine is his own scooter.** He measured the head and fins off
+  the SR50 he rides to class. That link between two projects on the site was
+  invisible before.
+- **How the XR200 wear was confirmed** — compression tests, then pulling the
+  head and cylinder to find where the wear was.
+- **The SR50 was re-jetted** to match the new displacement after a piston and
+  cylinder change — a detail no earlier source mentioned.
+- **GASP contribution** — he built the entire mechanism in SolidWorks.
+- **COMSOL contribution** — geometry, material properties and boundary conditions.
+- **Alarm clock contribution** — the physical build, plus the song and button code.
+- **Cutlass detail** — vacuum-operated climate system, gauge-cluster signal
+  tracing, radiator heat sensor, stereo rewire, seals and rust treatment.
 
 ## Images
 

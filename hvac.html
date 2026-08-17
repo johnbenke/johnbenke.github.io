@@ -93,6 +93,25 @@
         </table>
       </div>
 
+      <h4>How we built it up</h4>
+      <ul class="pts">
+        <li>Took as many real-world measurements of the building as we could — the envelope, the
+        materials it is built from, and the overall surface area — so the heat transfer rates
+        came from the actual building rather than a textbook example.</li>
+        <li>Worked out the shading coefficient and the other envelope properties that determine
+        how much heat the building takes on from outside, and therefore how much we would have to
+        remove.</li>
+        <li>Sized the system for an average St. Louis summer day, which sits at the high end of
+        what the building's plant has to cope with — design for the hard day, not the easy one.</li>
+      </ul>
+
+      <h4>What I took from it</h4>
+      <p class="overview">Running the loop of a reverse refrigeration cycle against a real
+      building rather than a worked example is what made this stick. The Python model let us swap
+      refrigerants and re-solve from scratch, so the comparison was ours rather than something
+      read off a table — and the write-up went beyond the thermodynamics into which refrigerants
+      carry environmental problems and which are actually cost-effective to run.</p>
+
       <h4>The solver</h4>
       <p class="overview">Each candidate fluid is pushed through the same four state points
       from CoolProp, so no result depends on a published table that might have been generated

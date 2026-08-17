@@ -21,12 +21,14 @@
   </header>
   <div class="pbody">
     <article class="last">
-      <p class="overview">The Honda AF16 50cc is an air-cooled engine: it has no radiator and
-      no coolant, so the fins cast into the cylinder are the entire thermal management system.
-      If they underperform, the engine seizes. This study modeled the finned cylinder in
-      COMSOL to find out whether they were sized correctly — but the real work was proving the
-      answer could be trusted. Mesh independence first, then a benchmark against Honda's own
-      service data, then a physical explanation for the gap between the two.</p>
+      <p class="overview">The Honda AF16 50cc is an air-cooled engine: no radiator, no coolant,
+      so the fins cast into the cylinder are the entire thermal management system. If they
+      underperform, the engine seizes. We wanted to find out how much those fins were really
+      doing — and the engine we modelled was the one in my own scooter. I measured the head and
+      its fins off the bike and built the model from those dimensions.</p>
+      <p class="overview">The real work was proving the answer could be trusted: mesh
+      independence first, then a benchmark against Honda's own service data, then a physical
+      explanation for the gap between the two.</p>
 
       <ul class="metrics">
         <li><b>~374 K</b><span>simulated base temp</span></li>
@@ -83,6 +85,19 @@
         effectiveness of 20.7 — well above the threshold of 2 at which fins are considered
         worth adding — and a fin efficiency of 98.7%.</li>
       </ul>
+
+      <h4>My part</h4>
+      <p class="overview">I took the dimensions off my scooter's head and fins and prepared the
+      engine in the software — geometry, material properties, and the boundary conditions that
+      let it stand in for the real thing under real airflow. Setting those conditions honestly is
+      most of whether a thermal simulation means anything; get them wrong and you produce a very
+      convincing picture of nothing.</p>
+
+      <h4>What I took from it</h4>
+      <p class="overview">Our results came out within a sensible range of the manufacturer's own
+      figures, which is the check that mattered — not that the model produced a temperature, but
+      that the temperature agreed with reality and we could explain the part that did not. We
+      then wrote up the analysis and discussion around what the numbers meant for the engine.</p>
 
       <div class="tw">
         <table>
