@@ -163,9 +163,30 @@ fixed body-side stripes — was built and then removed at John's request. Git
 history has both generators (search for `flourish`) if it is ever wanted back.
 
 
+## Senior projects — open items
+
+Both are **in progress** and written in present tense; revisit the wording once
+they are finished.
+
+- **No photographs for either.** Both cards use typographic tiles. The harvester
+  especially will transform with a build photo — even a bench shot of the drive
+  base or the cutter assembly.
+- **Harvester:** "40 turn radius" in John's dictation was read as *zero* turn
+  radius, which is what dual-motor tank steering gives you. Confirm.
+- **Harvester:** the holding stage between cutter and grinder is described only
+  as "something in between holding the sorghum under control" — name the
+  mechanism once it is designed.
+- **Harvester:** no sorghum throughput, runtime, battery voltage or mass figures
+  yet. One real number would lift the page.
+- **Pole climber:** course title is given as "Systems and Robotics" — confirm the
+  exact catalogue name and number for consistency with the MEMS listings.
+- **Pole climber:** servo count, climb height and pole diameter are all unstated.
+- **Neither names John's individual contribution** within the team of four. That
+  was the biggest gap on the older projects and is now the biggest gap on these.
+
 ## Structure
 
-The site is a card grid (`index.html`) over eight project pages, all sharing
+The site is a card grid (`index.html`) over ten project pages, all sharing
 `style.css`. Each project has its own URL, so a single project can be sent to a
 company directly. See `PORTFOLIO_SETUP.md` for the page-to-project map.
 

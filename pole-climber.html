@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autonomous Light Pole Climber — John Benke</title>
+<meta name="description" content="A robot that drives to a light pole, detaches from its base, climbs using grippers and a flipping motion, and sends back a photograph.">
+<meta property="og:title" content="Autonomous Light Pole Climber — John Benke">
+<meta property="og:description" content="A robot that drives to a light pole, detaches from its base, climbs using grippers and a flipping motion, and sends back a photograph.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://johnbenke.github.io/pole-climber.html">
+<meta property="og:image" content="https://johnbenke.github.io/images/hero-cutlass.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← John Benke</a>
+  <header class="phead">
+    <h1>Autonomous Light Pole Climber</h1>
+    <p class="meta">Systems &amp; Robotics · Team of four · Senior year · In progress</p>
+  </header>
+  <div class="pbody">
+    <article class="last">
+      <p class="overview">A robot that climbs a light pole on campus by itself, takes a
+      photograph from the top, and sends it back to the user. It drives to the pole on a wheeled
+      base, separates from that base, and climbs — gripping the pole and working its way up with
+      a flipping motion rather than a continuous crawl.</p>
+      <p class="overview">The whole sequence runs autonomously, so the robot has to know where
+      it is in the task and move itself to the next step without anyone driving it.</p>
+
+      <ul class="metrics">
+        <li><b>3</b><span>stages: drive, detach, climb</span></li>
+        <li><b>4</b><span>person team</span></li>
+        <li><b>Autonomous</b><span>no operator input</span></li>
+      </ul>
+
+      <h4>The sequence</h4>
+      <ul class="pts">
+        <li>Drive to the pole on a wheeled base.</li>
+        <li>Detach the climbing unit from that base.</li>
+        <li>Climb the pole using grippers and a flipping motion — one set of grippers holds
+        while the body flips past it to take the next bite up the pole.</li>
+        <li>Take the photograph and send it back to the user.</li>
+      </ul>
+
+      <h4>What it took to build</h4>
+      <ul class="pts">
+        <li>A lot of servos — the gripping and flipping motion needs coordinated actuation at
+        several joints, and each one has to hold position under the robot's own weight.</li>
+        <li>A battery pack sized for the climb.</li>
+        <li>Sensors so the robot can tell where it is in the sequence.</li>
+        <li>A control board sequencing the steps we want it to carry out, in order, on its own.</li>
+      </ul>
+
+      <h4>Where the difficulty is</h4>
+      <p class="overview">This one lives across three disciplines at once. The mechanical side
+      is getting the grip and the flip to actually lift the robot; the electrical side is
+      powering and wiring that many servos; and the systems side is sequencing it all so the
+      robot moves through the task reliably rather than once in five tries. It has taken a lot
+      of prototyping and a lot of back-and-forth — build it, watch where it fails, change it,
+      run it again.</p>
+
+      <h4>What I am taking from it</h4>
+      <p class="overview">Designing something that has to carry itself vertically is a different
+      problem from designing something that sits on the ground. Every gram you add has to be
+      lifted by the grippers you already chose, so the mechanical, electrical and control
+      decisions keep feeding back into each other — you cannot finish one before starting the
+      next.</p>
+
+      <ul class="tools">
+        <li>Robotics</li><li>Servo actuation</li><li>Sensors</li><li>Control sequencing</li>
+        <li>Systems integration</li><li>Electrical design</li><li>Prototyping</li>
+      </ul>
+    </article>
+  </div>
+  <nav class="nextprev">
+    <a href="harvester.html">← Remote-Control Biomass Harvester</a>
+    <a href="cutlass.html">1968 Oldsmobile Cutlass Supreme →</a>
+  </nav>
+  <footer>
+    <p><a href="mailto:johnjbenke@gmail.com">johnjbenke@gmail.com</a> · <a href="https://www.linkedin.com/in/john-benke">LinkedIn</a></p>
+    <p><a href="./">All projects</a> · John Benke, Mechanical Engineering, Washington University in St. Louis.</p>
+  </footer>
+</div>
+
+<script>
+// If an image is missing, drop its figure rather than showing a broken frame.
+document.querySelectorAll('figure img').forEach(function (img) {
+  img.addEventListener('error', function () {
+    var fig = img.closest('figure');
+    if (fig) fig.remove();
+  });
+});
+</script>
+</body>
+</html>
