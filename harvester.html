@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Remote-Control Biomass Harvester — John Benke</title>
-<meta name="description" content="Senior capstone: a remote-operated machine that cuts, grinds and stores sorghum stalk for bioenergy or animal feed.">
-<meta property="og:title" content="Remote-Control Biomass Harvester — John Benke">
-<meta property="og:description" content="Senior capstone: a remote-operated machine that cuts, grinds and stores sorghum stalk for bioenergy or animal feed.">
+<title>Remote-Controlled Biomass Harvester — John Benke</title>
+<meta name="description" content="MEMS 4110 senior capstone for the Danforth Plant Science Center: a remote-controlled harvester that cuts, grinds and stores sorghum for bioenergy or animal feed.">
+<meta property="og:title" content="Remote-Controlled Biomass Harvester — John Benke">
+<meta property="og:description" content="MEMS 4110 senior capstone for the Danforth Plant Science Center: a remote-controlled harvester that cuts, grinds and stores sorghum for bioenergy or animal feed.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://johnbenke.github.io/harvester.html">
 <meta property="og:image" content="https://johnbenke.github.io/images/hero-cutlass.jpg">
@@ -16,73 +16,86 @@
 <div class="wrap">
   <a class="back" href="./">← John Benke</a>
   <header class="phead">
-    <h1>Remote-Control Biomass Harvester</h1>
-    <p class="meta">Senior Capstone — Mechanical Engineering Design Project · Team of four · 2026–27 · In progress</p>
+    <h1>Remote-Controlled Biomass Harvester</h1>
+    <p class="meta">MEMS 4110 Senior Capstone · Sponsored by the Danforth Plant Science Center Field Research Site · Team of four · August 2026 – present</p>
   </header>
   <div class="pbody">
     <article class="last">
-      <p class="overview">A remote-operated machine that harvests a sorghum stalk, grinds it
-      down, and carries the result back to the operator to be emptied. The output is biomass —
-      either feedstock for bioenergy or feed for animals on the farm — so the machine has to do
-      the whole job in one pass: cut the stalk, keep hold of it, grind it, and store it.</p>
-      <p class="overview">The operator never has to walk out to it. It is driven entirely by
-      remote control at a distance, and when the hopper is full it is driven back in to be
-      emptied.</p>
+      <p class="overview">A fully remote-controlled harvester that cuts sorghum stalks in the
+      field, grinds them on board, and stores the ground material until the machine is driven
+      back to the operator and emptied. The output goes to bioenergy or to feed for animals on
+      the farm.</p>
+      <p class="overview">The project is sponsored by the Danforth Plant Science Center Field
+      Research Site, so the requirements came from a real operator working real rows rather
+      than from a brief.</p>
 
       <ul class="metrics">
-        <li><b>Zero</b><span>turn radius</span></li>
-        <li><b>4</b><span>motors</span></li>
-        <li><b>2</b><span>cutting blades</span></li>
-        <li><b>4</b><span>person team</span></li>
+        <li><b>15</b><span>customer needs</span></li>
+        <li><b>30 in</b><span>row spacing</span></li>
+        <li><b>8–12 in</b><span>cut height</span></li>
+        <li><b>20–25 ft</b><span>wireless range</span></li>
+        <li><b>4</b><span>concepts evaluated</span></li>
+      </ul>
+
+      <h4>My role</h4>
+      <ul class="pts">
+        <li>Mechanical engineer on the team, responsible for the frame and the drivetrain.</li>
+        <li>I own the drive wheels engineering model; a separate model covers the grinding
+        rollers.</li>
+        <li>I maintain the design document end to end and the budget tracker for all spending,
+        and report weekly progress and next-week goals to the project supervisor.</li>
       </ul>
 
       <h4>How it works</h4>
       <ul class="pts">
-        <li>Dual-motor tank steering — the two drive motors are driven independently, so
-        counter-rotating them turns the machine within its own footprint. In a crop row, being
-        able to turn without needing space to swing matters more than top speed.</li>
-        <li>A cutter at the front takes the stalk.</li>
-        <li>A holding stage between the cutter and the grinder keeps the stalk under control
-        through the hand-off, so it feeds rather than jams.</li>
-        <li>A grinder in the middle reduces the stalk.</li>
-        <li>A storage container at the back collects the ground material until the machine is
-        driven back and emptied.</li>
+        <li>Dual-motor tank steering, for tight maneuvering between crop rows. Driving the two
+        motors independently lets the machine turn within its own footprint, which matters far
+        more than speed when the rows are 30 inches apart.</li>
+        <li>A cutter at the front takes the stalk, a feed section holds and controls it as it
+        moves inward, a grinder in the middle reduces it, and a storage container collects the
+        ground material.</li>
+        <li>Hardware: two drive motors, two blade motors powering two cutting blades, motor
+        controllers, a remote control and receiver, and a battery.</li>
+        <li>The frame is built entirely from scratch — it has to carry the vehicle's weight over
+        field terrain and stay stable with all of the rotating mass on board.</li>
       </ul>
 
-      <h4>What it is built from</h4>
+      <h4>Design process</h4>
       <ul class="pts">
-        <li>Two drive motors and two further motors dedicated to cutting.</li>
-        <li>Two cutting blades.</li>
-        <li>Remote control and receiver, motor controllers, and a battery.</li>
-      </ul>
-
-      <h4>How the project runs</h4>
-      <ul class="pts">
-        <li>Full design documentation maintained across the whole project, not written up at
-        the end.</li>
-        <li>A spend sheet tracking the budget as we go.</li>
-        <li>A weekly report to a supervisor covering what we achieved that week and what we
-        intend to achieve the next — which means the plan has to be real enough to be held to.</li>
-        <li>Four-person team.</li>
+        <li>Interviewed the director of the Danforth Field Research Site and translated that
+        interview into 15 customer needs and a set of target specifications.</li>
+        <li>Key specifications: 30-inch row spacing, stalks 1–4 inches wide, an 8–12 inch cut
+        height, and 20–25 ft of wireless range.</li>
+        <li>Benchmarked three existing harvesters and two patents before committing to an
+        approach.</li>
+        <li>Applied ISO 4254-7 and ANSI/ASAE S318.19 agricultural machinery safety standards to
+        blade guarding and to remote operation — on a machine with two exposed blades that
+        nobody is standing next to, guarding is a design input, not an afterthought.</li>
+        <li>Generated four concepts through functional decomposition and a morphological
+        chart.</li>
+        <li>Built a scale mockup, which settled two decisions: wheels over tracks, on cost and
+        reliability, and how to control the way stalks feed into the grinder.</li>
       </ul>
 
       <h4>What I am taking from it</h4>
-      <p class="overview">This is the closest thing yet to how design actually works in
-      industry. We know what we are building, so the difficulty is not the idea — it is the
-      prototyping and the design process around it: making the sub-systems hand off to each
-      other cleanly, justifying spend, and standing behind a schedule in front of someone every
-      week. Reporting progress out loud changes how you plan.</p>
+      <p class="overview">This is the closest thing yet to how design works in industry. The
+      hard part is not the idea — we know what we are building. It is holding the whole process
+      together: keeping the documentation current rather than writing it up at the end,
+      justifying spend as it happens, and standing behind a schedule in front of a supervisor
+      every week. The scale mockup taught me the most in the least time; an afternoon of
+      cardboard answered a question two weeks of argument had not.</p>
 
       <ul class="tools">
-        <li>Prototyping</li><li>Design process</li><li>Drive &amp; steering</li>
-        <li>Motor control</li><li>Mechanism integration</li><li>Budget tracking</li>
-        <li>Project reporting</li>
+        <li>Frame &amp; drivetrain design</li><li>Tank steering</li><li>Motor control</li>
+        <li>RC systems</li><li>Customer needs analysis</li><li>Benchmarking</li>
+        <li>Morphological charts</li><li>ISO 4254-7</li><li>ANSI/ASAE S318.19</li>
+        <li>Scale mockups</li><li>Budget tracking</li>
       </ul>
     </article>
   </div>
   <nav class="nextprev">
     <span></span>
-    <a href="pole-climber.html">Autonomous Light Pole Climber →</a>
+    <a href="pole-climber.html">Autonomous Pole-Climbing Robot →</a>
   </nav>
   <footer>
     <p><a href="mailto:johnjbenke@gmail.com">johnjbenke@gmail.com</a> · <a href="https://www.linkedin.com/in/john-benke">LinkedIn</a></p>

@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Autonomous Light Pole Climber — John Benke</title>
-<meta name="description" content="A robot that drives to a light pole, detaches from its base, climbs using grippers and a flipping motion, and sends back a photograph.">
-<meta property="og:title" content="Autonomous Light Pole Climber — John Benke">
-<meta property="og:description" content="A robot that drives to a light pole, detaches from its base, climbs using grippers and a flipping motion, and sends back a photograph.">
+<title>Autonomous Pole-Climbing Robot — John Benke</title>
+<meta name="description" content="A two-part autonomous robot that drives to a light pole, detaches from its base, climbs with grippers and a flipping motion, and sends back a photo.">
+<meta property="og:title" content="Autonomous Pole-Climbing Robot — John Benke">
+<meta property="og:description" content="A two-part autonomous robot that drives to a light pole, detaches from its base, climbs with grippers and a flipping motion, and sends back a photo.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://johnbenke.github.io/pole-climber.html">
 <meta property="og:image" content="https://johnbenke.github.io/images/hero-cutlass.jpg">
@@ -16,65 +16,76 @@
 <div class="wrap">
   <a class="back" href="./">← John Benke</a>
   <header class="phead">
-    <h1>Autonomous Light Pole Climber</h1>
-    <p class="meta">Systems &amp; Robotics · Team of four · Senior year · In progress</p>
+    <h1>Autonomous Pole-Climbing Robot</h1>
+    <p class="meta">Special Topics in Robotics · Team of four · August 2026 – present</p>
   </header>
   <div class="pbody">
     <article class="last">
-      <p class="overview">A robot that climbs a light pole on campus by itself, takes a
-      photograph from the top, and sends it back to the user. It drives to the pole on a wheeled
-      base, separates from that base, and climbs — gripping the pole and working its way up with
-      a flipping motion rather than a continuous crawl.</p>
-      <p class="overview">The whole sequence runs autonomously, so the robot has to know where
-      it is in the task and move itself to the next step without anyone driving it.</p>
+      <p class="overview">An autonomous robot that drives across campus to a light pole,
+      detaches from its driving base, climbs the pole using grippers and a flipping motion,
+      takes a photo from the top, and sends it back to the user.</p>
+      <p class="overview">It is really two autonomous systems in one mission: a drive base that
+      finds the pole, and a climbing module that detaches and goes up it.</p>
 
       <ul class="metrics">
-        <li><b>3</b><span>stages: drive, detach, climb</span></li>
-        <li><b>4</b><span>person team</span></li>
-        <li><b>Autonomous</b><span>no operator input</span></li>
+        <li><b>4</b><span>gripper prototypes</span></li>
+        <li><b>4 kg</b><span>climbing weight budget</span></li>
+        <li><b>14.5 → 8.25 in</b><span>pole taper</span></li>
+        <li><b>2</b><span>autonomous systems</span></li>
       </ul>
 
-      <h4>The sequence</h4>
+      <h4>My role</h4>
       <ul class="pts">
-        <li>Drive to the pole on a wheeled base.</li>
-        <li>Detach the climbing unit from that base.</li>
-        <li>Climb the pole using grippers and a flipping motion — one set of grippers holds
-        while the body flips past it to take the next bite up the pole.</li>
-        <li>Take the photograph and send it back to the user.</li>
+        <li>Mechanical design and CAD lead.</li>
+        <li>Mechanical engineer on the drive base — frame and drivetrain.</li>
+        <li>Electrical integration and soldering.</li>
+        <li>Team and project management, including the bill of materials and the Gantt
+        chart.</li>
       </ul>
 
-      <h4>What it took to build</h4>
+      <h4>How it works</h4>
       <ul class="pts">
-        <li>A lot of servos — the gripping and flipping motion needs coordinated actuation at
-        several joints, and each one has to hold position under the robot's own weight.</li>
-        <li>A battery pack sized for the climb.</li>
-        <li>Sensors so the robot can tell where it is in the sequence.</li>
-        <li>A control board sequencing the steps we want it to carry out, in order, on its own.</li>
+        <li>The drive base is built from two bicycles, with one powered wheel and handlebars
+        steered by a servo motor, running on its own battery and controlled by an Arduino on a
+        compact rechargeable pack.</li>
+        <li>The climbing module uses servos, grippers and a flipping motion to work its way up
+        the pole.</li>
+        <li>A control board processes what the robot sees and sequences each step of the
+        mission, so it moves itself from one stage to the next without an operator.</li>
       </ul>
 
-      <h4>Where the difficulty is</h4>
-      <p class="overview">This one lives across three disciplines at once. The mechanical side
-      is getting the grip and the flip to actually lift the robot; the electrical side is
-      powering and wiring that many servos; and the systems side is sequencing it all so the
-      robot moves through the task reliably rather than once in five tries. It has taken a lot
-      of prototyping and a lot of back-and-forth — build it, watch where it fails, change it,
-      run it again.</p>
+      <h4>Engineering highlights</h4>
+      <ul class="pts">
+        <li>Iterated the gripper through four laser-cut and 3D-printed prototypes against a
+        measured octagonal pole that tapers from 14.5 inches to 8.25 inches — the gripper has to
+        hold at both ends of that range, not just one.</li>
+        <li>Replaced a squeezing claw with a wraparound hook, which cut the servo torque
+        required. Changing the geometry was cheaper than specifying a bigger servo.</li>
+        <li>Split the drive base from the climbing module specifically to cut climbing mass, and
+        set a 4 kg weight budget working backward from servo capacity — the servos you can
+        afford decide what the robot is allowed to weigh.</li>
+        <li>Selected the DC drive, servo and stepper motors.</li>
+        <li>Integrated servos, sensors, a battery pack and the control board, and soldered the
+        wiring.</li>
+      </ul>
 
       <h4>What I am taking from it</h4>
-      <p class="overview">Designing something that has to carry itself vertically is a different
-      problem from designing something that sits on the ground. Every gram you add has to be
-      lifted by the grippers you already chose, so the mechanical, electrical and control
-      decisions keep feeding back into each other — you cannot finish one before starting the
-      next.</p>
+      <p class="overview">Designing something that has to lift itself is a different problem
+      from designing something that sits on the ground. Every gram added has to be carried by
+      grippers and servos already chosen, so the mechanical, electrical and control decisions
+      keep feeding back into one another — you cannot finish one before starting the next. The
+      weight budget is what made that tractable: once it existed, it settled arguments instead
+      of starting them.</p>
 
       <ul class="tools">
-        <li>Robotics</li><li>Servo actuation</li><li>Sensors</li><li>Control sequencing</li>
-        <li>Systems integration</li><li>Electrical design</li><li>Prototyping</li>
+        <li>Robotics</li><li>CAD lead</li><li>Gripper design</li><li>Weight budgeting</li>
+        <li>Servo, DC &amp; stepper motors</li><li>Sensors</li><li>Control sequencing</li>
+        <li>Soldering</li><li>Laser cutting</li><li>3D printing</li><li>Gantt charts</li>
       </ul>
     </article>
   </div>
   <nav class="nextprev">
-    <a href="harvester.html">← Remote-Control Biomass Harvester</a>
+    <a href="harvester.html">← Remote-Controlled Biomass Harvester</a>
     <a href="cutlass.html">1968 Oldsmobile Cutlass Supreme →</a>
   </nav>
   <footer>
