@@ -173,9 +173,17 @@ wording once they are finished.
   mockup, frame weldment or cutter assembly would all work; the pole climber has
   four gripper prototypes and a drive base built from two bicycles, any of which
   would make a striking card.
-- **Harvester:** no throughput, runtime, battery voltage or mass figures yet.
-  The spec table is strong on the customer side (row spacing, stalk width, cut
-  height, range) but has nothing yet on machine performance.
+- **Harvester results are deliberately absent.** The page carries a Status line
+  saying design and modeling are done and the prototype build and field testing
+  are ahead. Once tested, replace it with a real figure — "cut and held X stalks
+  at Y mph" — which will be the strongest line on the page.
+- **Harvester motor count changed.** Earlier material said two drive motors plus
+  two blade motors (four); the current write-up says three independently
+  reversible motors on plug-and-play ESCs. The page follows the newer figure.
+  Worth a check that three is right.
+- **Harvester role unverified.** The report lists Kersemeier, Benke, Bluhm and
+  Fraile. The page states John as mechanical lead for frame and drivetrain, and
+  owner of the drive-wheel engineering model, on his own account.
 - **Pole climber:** climb height and servo count are still unstated.
 - **MIG welding** is listed under Manufacturing as learned on the vehicle
   restorations. The Cutlass and motorcycle pages do not currently mention

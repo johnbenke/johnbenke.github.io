@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Remote-Controlled Biomass Harvester — John Benke</title>
-<meta name="description" content="MEMS 4110 senior capstone for the Danforth Plant Science Center: a remote-controlled harvester that cuts, grinds and stores sorghum for bioenergy or animal feed.">
-<meta property="og:title" content="Remote-Controlled Biomass Harvester — John Benke">
-<meta property="og:description" content="MEMS 4110 senior capstone for the Danforth Plant Science Center: a remote-controlled harvester that cuts, grinds and stores sorghum for bioenergy or animal feed.">
+<title>Remote-Controlled Sorghum Biomass Harvester — John Benke</title>
+<meta name="description" content="MEMS 4110 senior design for the Donald Danforth Plant Science Center: a single-row remote-controlled harvester that cuts, grinds and stores sorghum on board.">
+<meta property="og:title" content="Remote-Controlled Sorghum Biomass Harvester — John Benke">
+<meta property="og:description" content="MEMS 4110 senior design for the Donald Danforth Plant Science Center: a single-row remote-controlled harvester that cuts, grinds and stores sorghum on board.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://johnbenke.github.io/harvester.html">
 <meta property="og:image" content="https://johnbenke.github.io/images/hero-cutlass.jpg">
@@ -16,80 +16,93 @@
 <div class="wrap">
   <a class="back" href="./">← John Benke</a>
   <header class="phead">
-    <h1>Remote-Controlled Biomass Harvester</h1>
-    <p class="meta">MEMS 4110 Senior Capstone · Sponsored by the Danforth Plant Science Center Field Research Site · Team of four · August 2026 – present</p>
+    <h1>Remote-Controlled Sorghum Biomass Harvester</h1>
+    <p class="meta">MEMS 4110 Mechanical Engineering Design · Washington University in St. Louis · Team of four · Customer: Dr. Cody Bagnall, Donald Danforth Plant Science Center · Fall 2026 – present</p>
   </header>
   <div class="pbody">
     <article class="last">
-      <p class="overview">A fully remote-controlled harvester that cuts sorghum stalks in the
-      field, grinds them on board, and stores the ground material until the machine is driven
-      back to the operator and emptied. The output goes to bioenergy or to feed for animals on
-      the farm.</p>
-      <p class="overview">The project is sponsored by the Danforth Plant Science Center Field
-      Research Site, so the requirements came from a real operator working real rows rather
-      than from a brief.</p>
+      <p class="overview">Commercial biomass harvesters cut four to eight rows at a time. That
+      is far too big for the Danforth Center's research plots, where sorghum is grown in single
+      test rows spaced 30 inches apart. The researchers needed something small enough to drive
+      wirelessly down one row — cutting stalks, grinding them down, and storing the biomass on
+      board.</p>
+      <p class="overview">The stalks are 1–4 inches thick and 12–15 feet tall, and the field
+      itself is mud, holes and weeds. Those two facts set most of the design.</p>
 
       <ul class="metrics">
-        <li><b>15</b><span>customer needs</span></li>
+        <li><b>15</b><span>requirements</span></li>
         <li><b>30 in</b><span>row spacing</span></li>
-        <li><b>8–12 in</b><span>cut height</span></li>
-        <li><b>20–25 ft</b><span>wireless range</span></li>
-        <li><b>4</b><span>concepts evaluated</span></li>
+        <li><b>12–15 ft</b><span>stalk height</span></li>
+        <li><b>40–60</b><span>stalk capacity</span></li>
+        <li><b>$600</b><span>total budget</span></li>
       </ul>
 
       <h4>My role</h4>
       <ul class="pts">
-        <li>Mechanical engineer on the team, responsible for the frame and the drivetrain.</li>
-        <li>I own the drive wheels engineering model; a separate model covers the grinding
-        rollers.</li>
-        <li>I maintain the design document end to end and the budget tracker for all spending,
-        and report weekly progress and next-week goals to the project supervisor.</li>
+        <li>Mechanical lead for the frame and the drivetrain.</li>
+        <li>I built the drive-wheel engineering model. It sizes the motors from rolling
+        resistance, acceleration, wheel torque, gear ratio, drivetrain efficiency and a safety
+        factor — and it checks traction, so the front drive wheels do not simply spin in a
+        muddy field.</li>
+        <li>Teammates own the cutting-blade and grinding-roller models and the electronics.</li>
+        <li>I maintain the design document end to end and the budget tracker, and report weekly
+        progress and next-week goals to the project supervisor.</li>
       </ul>
 
-      <h4>How it works</h4>
+      <h4>The process</h4>
       <ul class="pts">
-        <li>Dual-motor tank steering, for tight maneuvering between crop rows. Driving the two
-        motors independently lets the machine turn within its own footprint, which matters far
-        more than speed when the rows are 30 inches apart.</li>
-        <li>A cutter at the front takes the stalk, a feed section holds and controls it as it
-        moves inward, a grinder in the middle reduces it, and a storage container collects the
-        ground material.</li>
-        <li>Hardware: two drive motors, two blade motors powering two cutting blades, motor
-        controllers, a remote control and receiver, and a battery.</li>
-        <li>The frame is built entirely from scratch — it has to carry the vehicle's weight over
-        field terrain and stay stable with all of the rotating mass on board.</li>
+        <li>Interviewed the customer and turned what he told us into 15 requirements — among
+        them 20–25 ft of wireless range, an 8–12 inch cutting height, room for 40–60 stalks, and
+        the ability to handle rough ground.</li>
+        <li>Researched commercial harvesters, relevant patents, and the agricultural machinery
+        safety standards: ISO 4254-7 and ANSI/ASAE S318.19.</li>
+        <li>Built a cardboard mockup and sketched four concepts.</li>
+        <li>Ranked them with an Analytic Hierarchy Process feeding a weighted scoring matrix, so
+        the choice came out of the customer's own priorities rather than ours.</li>
+        <li>The mockup also settled wheels over tracks, on cost and reliability.</li>
       </ul>
 
-      <h4>Design process</h4>
+      <h4>The design that won</h4>
       <ul class="pts">
-        <li>Interviewed the director of the Danforth Field Research Site and translated that
-        interview into 15 customer needs and a set of target specifications.</li>
-        <li>Key specifications: 30-inch row spacing, stalks 1–4 inches wide, an 8–12 inch cut
-        height, and 20–25 ft of wireless range.</li>
-        <li>Benchmarked three existing harvesters and two patents before committing to an
-        approach.</li>
-        <li>Applied ISO 4254-7 and ANSI/ASAE S318.19 agricultural machinery safety standards to
-        blade guarding and to remote operation — on a machine with two exposed blades that
-        nobody is standing next to, guarding is a design input, not an afterthought.</li>
-        <li>Generated four concepts through functional decomposition and a morphological
-        chart.</li>
-        <li>Built a scale mockup, which settled two decisions: wheels over tracks, on cost and
-        reliability, and how to control the way stalks feed into the grinder.</li>
+        <li>A funnel: guide arms steer each stalk into the blade, and the cut stalk slides down
+        a ramp into grinding rollers that feed a storage bin.</li>
+        <li>Dual-motor tank steering, so the machine turns within its own footprint — which
+        matters more than speed when the rows are 30 inches apart.</li>
+        <li>Three independently reversible motors on plug-and-play ESCs, a 12 V AGM battery and
+        an RC receiver.</li>
+        <li>The frame is built from scratch to carry the machine's weight over field terrain and
+        stay stable with all of the rotating mass on board.</li>
       </ul>
+
+      <h4>Constraints</h4>
+      <ul class="pts">
+        <li>A $600 total budget, which rules out most of the obvious answers and is the reason
+        the electronics are plug-and-play rather than custom.</li>
+        <li>Safety: shielded blades, and remote operation from a safe distance. On a machine
+        with exposed blades that nobody is standing next to, guarding is a design input rather
+        than an afterthought.</li>
+      </ul>
+
+      <h4>Status</h4>
+      <p class="overview">Design and modeling are complete; the prototype build and field
+      testing are still ahead, so there are no test results to report yet.</p>
 
       <h4>What I am taking from it</h4>
-      <p class="overview">This is the closest thing yet to how design works in industry. The
-      hard part is not the idea — we know what we are building. It is holding the whole process
-      together: keeping the documentation current rather than writing it up at the end,
-      justifying spend as it happens, and standing behind a schedule in front of a supervisor
-      every week. The scale mockup taught me the most in the least time; an afternoon of
-      cardboard answered a question two weeks of argument had not.</p>
+      <p class="overview">This is cross-disciplinary systems work with a real customer, hard
+      physical constraints and a model-driven design — the mechanical, electrical and budget
+      decisions all constrain each other, and the engineering model is what makes that
+      tractable instead of a matter of opinion. The hard part was never the idea. It is holding
+      the process together: keeping documentation current rather than writing it up at the end,
+      justifying spend as it happens, and standing behind a schedule every week. The cardboard
+      mockup taught me the most in the least time — an afternoon of it answered a question that
+      two weeks of argument had not.</p>
 
       <ul class="tools">
-        <li>Frame &amp; drivetrain design</li><li>Tank steering</li><li>Motor control</li>
-        <li>RC systems</li><li>Customer needs analysis</li><li>Benchmarking</li>
-        <li>Morphological charts</li><li>ISO 4254-7</li><li>ANSI/ASAE S318.19</li>
-        <li>Scale mockups</li><li>Budget tracking</li>
+        <li>Requirements engineering</li><li>AHP / weighted scoring</li>
+        <li>Engineering modeling</li><li>Drivetrain design</li><li>Traction analysis</li>
+        <li>Frame design</li><li>Tank steering</li><li>ESCs &amp; RC systems</li>
+        <li>ISO 4254-7</li><li>ANSI/ASAE S318.19</li><li>Prototyping</li>
+        <li>Working with a real customer</li>
       </ul>
     </article>
   </div>
