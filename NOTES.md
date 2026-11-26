@@ -165,6 +165,21 @@ history has both generators (search for `flourish`) if it is ever wanted back.
 
 ## Senior projects — open items
 
+- **Pole-finding robot: John owns the delivery robot, not the climber.** The
+  team is building a two-part system; teammates design the climbing module
+  while John handles the robot that locates the pole and delivers the climber
+  to it. Earlier material credited him with the gripper prototyping (four
+  laser-cut and 3D-printed iterations, the wraparound hook, the 4 kg weight
+  budget) — that is **not** on the page any more, since it belongs to the
+  climbing module. If any of that early gripper work was his, say so and it
+  goes back.
+- **Pole-finder course number.** Given as ESE 3050; earlier material called it
+  "Special Topics in Robotics". Only the number is on the page, in case those
+  are different courses.
+- **Page renamed** `pole-climber.html` → `pole-finder.html`. The old URL now
+  404s; nothing on the site links to it.
+- **No trial results.** The page says build and integration are underway. Once
+  tested, add success rate, approach distance and time.
 Both run August 2026 – present and are written in present tense; revisit the
 wording once they are finished.
 
@@ -184,7 +199,6 @@ wording once they are finished.
 - **Harvester role unverified.** The report lists Kersemeier, Benke, Bluhm and
   Fraile. The page states John as mechanical lead for frame and drivetrain, and
   owner of the drive-wheel engineering model, on his own account.
-- **Pole climber:** climb height and servo count are still unstated.
 - **MIG welding** is listed under Manufacturing as learned on the vehicle
   restorations. The Cutlass and motorcycle pages do not currently mention
   welding by name — worth adding there so the skill traces to a project.

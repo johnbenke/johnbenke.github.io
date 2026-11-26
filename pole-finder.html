@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autonomous Pole-Finding Robot — John Benke</title>
+<meta name="description" content="ESE 3050: a low-cost autonomous robot built from two bicycles that searches for a target, tracks it by colour, and drives up to it — delivering a pole-climbing module to its pole.">
+<meta property="og:title" content="Autonomous Pole-Finding Robot — John Benke">
+<meta property="og:description" content="ESE 3050: a low-cost autonomous robot built from two bicycles that searches for a target, tracks it by colour, and drives up to it — delivering a pole-climbing module to its pole.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://johnbenke.github.io/pole-finder.html">
+<meta property="og:image" content="https://johnbenke.github.io/images/hero-cutlass.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← John Benke</a>
+  <header class="phead">
+    <h1>Autonomous Pole-Finding Robot</h1>
+    <p class="meta">ESE 3050 · Washington University in St. Louis · Team of four · Fall 2026 · Mechanical design, embedded C++, computer vision</p>
+  </header>
+  <div class="pbody">
+    <article class="last">
+      <p class="overview">Our team is building a two-part system: a robot that locates a pole
+      and delivers a climbing module to it, and a climbing module that goes up. I am
+      responsible for the first half — the robot that finds the pole and gets the climber
+      there. My teammates are designing the climber itself.</p>
+      <p class="overview">Mine is a low-cost autonomous robot built from two bicycles bolted
+      together. With no human input it searches its surroundings, spots a target marked with
+      orange tape, drives up to it, and stops.</p>
+
+      <ul class="metrics">
+        <li><b>3</b><span>control states</span></li>
+        <li><b>160×120</b><span>vision frames</span></li>
+        <li><b>2</b><span>boards, one serial line</span></li>
+        <li><b>2</b><span>bicycles</span></li>
+      </ul>
+
+      <h4>Frame and drivetrain — my main role</h4>
+      <ul class="pts">
+        <li>Joined two bike frames with 2×4s to make the chassis.</li>
+        <li>Designed a friction drive: a motor roller presses directly against the tire, which
+        avoided dealing with chains entirely. One wheel is powered.</li>
+        <li>A single servo steers both sets of handlebars together through a linkage.</li>
+      </ul>
+
+      <h4>Asymmetric steering</h4>
+      <p class="overview">The robot only ever searches by circling left. So I gave the linkage a
+      lot of left travel and very little right. That trade bought more search turn without
+      losing fine control on the approach — the two phases need opposite things from the same
+      servo, and the geometry can favour one without a second actuator.</p>
+
+      <h4>Electronics</h4>
+      <ul class="pts">
+        <li>An ESP32-CAM handles vision and an Arduino Uno clone handles drive control,
+        connected by a single serial line.</li>
+        <li>I chose two boards over one because the ESP32-CAM has few usable pins, and because
+        splitting the work made each board easier to debug and to swap when something
+        failed.</li>
+        <li>Power runs from the battery through a fused kill switch, then to separate
+        adjustable buck converters for the logic and the servo, and to a BTS7960 motor
+        driver.</li>
+      </ul>
+
+      <h4>Control software</h4>
+      <ul class="pts">
+        <li>I took over the code and the camera mount late in the build.</li>
+        <li>The ESP32-CAM thresholds 160×120 frames by colour and sends the target's position
+        and pixel count to the Arduino.</li>
+        <li>The Arduino runs a three-state machine — <em>search</em>: drive in a circle until
+        the target is spotted; <em>track</em>: steer toward it in proportion to how far off
+        centre it sits; <em>arrive</em>: stop once the target fills enough of the frame.</li>
+        <li>Safety features: a power-on delay, a ramped motor start so the roller does not slip
+        against the tire, and a failsafe that cuts the motor if the camera stops sending
+        data.</li>
+      </ul>
+
+      <h4>The climbing module</h4>
+      <p class="overview">Designed by my teammates. Once my robot has delivered it to the pole,
+      it detaches and climbs using grippers and a flipping motion.</p>
+
+      <h4>Status</h4>
+      <p class="overview">Build and integration are underway; trial results are not in yet, so
+      there are no success rates or approach distances to report.</p>
+
+      <h4>What I learned</h4>
+      <p class="overview">This was an exercise in integrating mechanical and electrical systems
+      on a cheap, flexible frame — and "flexible" is the problem as much as the feature.
+      Vibration affected the camera, power noise reset the boards, and the decision that fixed
+      the most was mounting the camera to the frame rather than to the steering, so the control
+      code was not chasing its own steering inputs. The mechanical choice solved a software
+      problem.</p>
+
+      <ul class="tools">
+        <li>Friction drive</li><li>Servo steering linkage</li><li>Frame fabrication</li>
+        <li>ESP32-CAM</li><li>Computer vision</li><li>Embedded C++</li>
+        <li>State machines</li><li>Serial communication</li><li>Buck converters</li>
+        <li>BTS7960 motor driver</li><li>Failsafe design</li>
+      </ul>
+    </article>
+  </div>
+  <nav class="nextprev">
+    <a href="harvester.html">← Remote-Controlled Sorghum Biomass Harvester</a>
+    <a href="cutlass.html">1968 Oldsmobile Cutlass Supreme →</a>
+  </nav>
+  <footer>
+    <p><a href="mailto:johnjbenke@gmail.com">johnjbenke@gmail.com</a> · <a href="https://www.linkedin.com/in/john-benke">LinkedIn</a></p>
+    <p><a href="./">All projects</a> · John Benke, Mechanical Engineering, Washington University in St. Louis.</p>
+  </footer>
+</div>
+
+<script>
+// If an image is missing, drop its figure rather than showing a broken frame.
+document.querySelectorAll('figure img').forEach(function (img) {
+  img.addEventListener('error', function () {
+    var fig = img.closest('figure');
+    if (fig) fig.remove();
+  });
+});
+</script>
+</body>
+</html>
